@@ -24,6 +24,11 @@ class Asyncapi < Formula
     inreplace "package.json", "rimraf oclif.manifest.json", "rm -f oclif.manifest.json"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Delete native binaries installed by npm, as we dont support `musl` for a `libc` implementation
+    node_modules = libexec/"lib/node_modules/@asyncapi/cli/node_modules"
+    (node_modules/"@swc/core-linux-x64-musl/swc.linux-x64-musl.node").unlink if OS.linux?
+
     # Replace universal binaries with their native slices
     deuniversalize_machos
   end
