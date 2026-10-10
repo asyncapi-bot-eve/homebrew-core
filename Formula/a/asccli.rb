@@ -27,11 +27,11 @@ class Asccli < Formula
     NEW
     inreplace "Sources/ASCCommand/Version.swift", 'let ascVersion = "0.1.3"', %Q(let ascVersion = "#{version}")
     system "swift", "build", *std_swift_args
-    bin.install ".build/release/asc" => "asccli"
+    bin.install ".build/release/asc"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/asccli --version")
+    assert_match version.to_s, shell_output("#{bin}/asc --version")
 
     # `auth check` resolves credentials from the environment and prints the
     # account status as JSON, exercising real functionality with no network
@@ -39,7 +39,7 @@ class Asccli < Formula
     ENV["ASC_KEY_ID"] = "TESTKEYID"
     ENV["ASC_ISSUER_ID"] = "00000000-0000-0000-0000-000000000000"
     ENV["ASC_PRIVATE_KEY"] = "-----BEGIN PRIVATE KEY-----\nTEST\n-----END PRIVATE KEY-----"
-    status = shell_output("#{bin}/asccli auth check")
+    status = shell_output("#{bin}/asc auth check")
     assert_match "keyID", status
     assert_match "issuerID", status
   end
