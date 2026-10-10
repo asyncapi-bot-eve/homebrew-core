@@ -4,6 +4,7 @@ class Gambit < Formula
   url "https://github.com/gambitproject/gambit/releases/download/v16.7.0/gambit-16.7.0.tar.gz"
   sha256 "35a2d7df4f8181cb216ce9a2b10ca820724768d8c69787a608a4a2725a745278"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
+  revision 1
 
   livecheck do
     url :stable
