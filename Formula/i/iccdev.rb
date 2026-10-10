@@ -4,6 +4,7 @@ class Iccdev < Formula
   url "https://github.com/InternationalColorConsortium/iccDEV/archive/refs/tags/v2.3.2.3.tar.gz"
   sha256 "0748d2759b5c010efa84faf1820d9743f88adf79f4d3dc740651a7b579517e62"
   license "BSD-3-Clause"
+  revision 1
 
   # Skip `wasm-` tags
   livecheck do
