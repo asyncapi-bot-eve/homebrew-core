@@ -4,6 +4,7 @@ class Wxpython < Formula
   url "https://files.pythonhosted.org/packages/3d/dd/026f6286f8beefcdd9551ad2e05b4e3edb45e638cdc067db211c53c950ce/wxpython-4.3.1.tar.gz"
   sha256 "4e3a95b63175be8e10f0662de506a36d8cc6cb86ecc5b30ae880c8dafb34a0cd"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  revision 1
 
   bottle do
     rebuild 1
