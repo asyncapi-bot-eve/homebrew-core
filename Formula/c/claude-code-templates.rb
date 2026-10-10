@@ -1,8 +1,8 @@
 class ClaudeCodeTemplates < Formula
   desc "CLI tool for configuring and monitoring Claude Code"
   homepage "https://www.aitmpl.com/agents"
-  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.29.4.tgz"
-  sha256 "b5c67ea73eebb3bf6aee21556182d7aba4d58d12ac49acc5c98d351071a6babf"
+  url "https://registry.npmjs.org/claude-code-templates/-/claude-code-templates-1.29.7.tgz"
+  sha256 "a7887b6b6a4bb70c15c0e33b6b2ed7e0e284bec2d0f73f4640878ab1cf8f1c74"
   license "MIT"
 
   bottle do
@@ -20,9 +20,6 @@ class ClaudeCodeTemplates < Formula
   def install
     system "npm", "install", *std_npm_args(ignore_scripts: false)
     bin.install_symlink libexec.glob("bin/*")
-
-    # Remove pre-built binaries which were source-built via script
-    rm_r libexec/"lib/node_modules/claude-code-templates/node_modules/bufferutil/prebuilds"
   end
 
   test do
