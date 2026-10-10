@@ -1,8 +1,8 @@
 class Unitycatalog < Formula
   desc "Open, Multi-modal Catalog for Data & AI"
   homepage "https://unitycatalog.io/"
-  url "https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "c1a66bac444ce23a472141f1d3c16f2ea7022d93d9537837315cfa71639faa0a"
+  url "https://github.com/unitycatalog/unitycatalog/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "fc23df4b6617a1cf1f53e822b68b68490f5272912753b5a6fb76c1734d461800"
   license "Apache-2.0"
 
   livecheck do
@@ -23,7 +23,11 @@ class Unitycatalog < Formula
   depends_on "sbt" => :build
   depends_on "openjdk@21"
 
+  # SBT resolves dependencies during the build; the test starts a local server.
+  allow_network_access! [:build, :test]
+
   def install
+    ENV["JAVA_HOME"] = Language::Java.java_home("21")
     system "sbt", "createTarball"
 
     mkdir "build" do
@@ -49,11 +53,29 @@ class Unitycatalog < Formula
   end
 
   test do
-    port = free_port
-    spawn bin/"start-uc-server", "--port", port.to_s
+    require "socket"
+
+    # The server binds the requested port and the following port.
+    port = loop do
+      candidate = free_port
+      next if candidate == 65535
+
+      begin
+        TCPServer.new(candidate + 1).close
+        break candidate
+      rescue Errno::EADDRINUSE
+        next
+      end
+    end
+    pid = spawn formula_opt_bin("openjdk@21")/"java",
+                "-cp", (libexec/"jars/classpath").read.strip,
+                "io.unitycatalog.server.UnityCatalogServer", "--port", port.to_s
     sleep 20
 
     output = shell_output("#{bin}/uc catalog list --server http://localhost:#{port}")
     assert_match "[]", output
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end
