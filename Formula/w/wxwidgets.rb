@@ -1,10 +1,10 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.3/wxWidgets-3.3.3.tar.bz2"
-  sha256 "81b09d6dd9f1ed9301f8c55a968a488d0491f264dc2bab19a7e407ac67009482"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.4/wxWidgets-3.3.4.tar.bz2"
+  sha256 "815c16cafa4fcbfcf25c5c0a3418309c62257b8a3b6f91d85a1367a134f98c98"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  compatibility_version 2
+  compatibility_version 3
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -32,6 +32,7 @@ class Wxwidgets < Formula
   uses_from_macos "expat"
 
   on_linux do
+    depends_on "at-spi2-core"
     depends_on "cairo"
     depends_on "fontconfig"
     depends_on "gdk-pixbuf"
@@ -47,6 +48,14 @@ class Wxwidgets < Formula
     depends_on "pango"
     depends_on "wayland"
     depends_on "zlib-ng-compat"
+  end
+
+  # Restore public `wxRibbonBar::AcceptsFocus()` for wxPython
+  patch do
+    url "https://github.com/wxWidgets/wxWidgets/commit/056bf3193a97d470d560b782b9f184017aa0593a.patch?full_index=1"
+    sha256 "467164bda254b801723fbf131f250b596a1fbced1336abb5f613598559397f4b"
+    type :unofficial
+    resolves "https://github.com/wxWidgets/wxWidgets/pull/27203"
   end
 
   def install
@@ -98,6 +107,16 @@ class Wxwidgets < Formula
   end
 
   test do
-    system bin/"wx-config", "--libs"
+    (testpath/"test.cpp").write <<~CPP
+      #include <wx/string.h>
+      #include <iostream>
+
+      int main() {
+        std::cout << wxString::FromUTF8("homebrew").Upper().ToStdString();
+      }
+    CPP
+    flags = shell_output("#{bin}/wx-config --cxxflags --libs base").split
+    system ENV.cxx, "test.cpp", "-o", "test", *flags
+    assert_equal "HOMEBREW", shell_output("./test")
   end
 end
