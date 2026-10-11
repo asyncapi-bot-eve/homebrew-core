@@ -22,7 +22,7 @@ class Fail2ban < Formula
   end
 
   depends_on "sphinx-doc" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     Pathname.glob("config/paths-*.conf").reject do |pn|
