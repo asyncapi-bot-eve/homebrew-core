@@ -1,8 +1,8 @@
 class C3c < Formula
   desc "Compiler for the C3 language"
   homepage "https://c3-lang.org"
-  url "https://github.com/c3lang/c3c/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "d689bbb43d9b392a994420ff801b6b58fe21d6c329a6a36f73c5f57711486ffb"
+  url "https://github.com/c3lang/c3c/archive/refs/tags/v0.8.5.tar.gz"
+  sha256 "9fc60b5092ec63bb77ee5cb80df49a0929e38b2d56ce76d4211ccedb391ca709"
   license "LGPL-3.0-only"
   head "https://github.com/c3lang/c3c.git", branch: "master"
 
@@ -39,6 +39,7 @@ class C3c < Formula
       "-DC3_USE_MIMALLOC=OFF",
       "-DC3_USE_TB=OFF",
       "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm",
       "-DLLVM=#{llvm.opt_lib/shared_library("libLLVM")}",
       "-DLLD_COFF=#{lld.opt_lib/shared_library("liblldCOFF")}",
       "-DLLD_COMMON=#{lld.opt_lib/shared_library("liblldCommon")}",
