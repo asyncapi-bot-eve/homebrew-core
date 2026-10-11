@@ -10,13 +10,12 @@ class GiDocgen < Formula
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "02e573e516ed8ce01eb164f3484bf77869f5cf9769a33fdf13e9de597b0fc64e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ade6e7b64efa1bd419235099bc97544dc290f8d8c215e56b20e46941f8fd2691"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05b81ef21f4b56bb1c03467acf341b083ba9501488aca0ebd6aebba34ef1224b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9a2b8a11005241a7c48e3f24eed4c13787101740dc0f14f936a7f024b5cb956d"
-    sha256 cellar: :any_skip_relocation, sonoma:            "68736cc9037f69db4a0209fe4d579e3aa941c37386b245c3d2e51463ab827438"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "850866eea625d607db7d8e81f97a0d15574954617103b11bb941a2b0acdf275b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "80f8000708a422268e80cd71894206e3a2be17785cff10d8aca78e6d67c5496a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "51de041c1e7c0251ac6f23cbbf9b552bfb30f9be5bb54ad6b3ba5479886753be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e8bd069b7b033e0ad35a0091eb760418ac8395fc0e9b2553105842bacba0730"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1930ae861501550ec82c48d91faac19067bd9b768b79083ebb2360453fe2416"
+    sha256 cellar: :any,                 arm64_linux:       "db99eb679926bace2f21b5205288ecf07f8f4b31558bc0dbc432beeed4b90e92"
+    sha256 cellar: :any,                 x86_64_linux:      "59f11e660c2f8665f57f11f1cbed9ddc4907ca1642136a3e089c92999639f696"
   end
 
   depends_on "python@3.15"
