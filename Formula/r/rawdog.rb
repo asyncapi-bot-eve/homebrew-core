@@ -7,15 +7,15 @@ class Rawdog < Formula
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
-  revision 26
+  revision 27
   head "https://github.com/granawkins/rawdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "933c6430478095a9d43380bd093bde173da97389f07afbe1eca58b149e51a561"
-    sha256 cellar: :any, arm64_tahoe:       "ba3592f844375142a4dc40b1a347c41e5bf228f04cf48ee685645adc19772cc8"
-    sha256 cellar: :any, arm64_sequoia:     "51c5d65bb8ab0eb2089508609ed9c0e5edf564af0b5882fe09bec19a59b2123b"
-    sha256 cellar: :any, arm64_linux:       "5f2e7bc1df0f2e3c1ce1e53ee8b51a9dc44844c3f633694ccc910f20cc97327a"
-    sha256 cellar: :any, x86_64_linux:      "c241c0f22cfcf8baca2b32603d4ee54345ce5c1b6a26f1e2159feccf071b3271"
+    sha256 cellar: :any, arm64_golden_gate: "20d47763739bc82f679070d7bea2615a29e0ab228d078c84a50ec578458da92d"
+    sha256 cellar: :any, arm64_tahoe:       "c3287af2e2aa78a6eb16a807a45318d48eb0169c84c5d140fb1ea9626de8b74d"
+    sha256 cellar: :any, arm64_sequoia:     "4d1ac2442746d655c7d9b7c01690e890047489d012f510464ca5598a0835a81c"
+    sha256 cellar: :any, arm64_linux:       "a2ef9f5a0973f183a1d8db76af9b84ad51dfa8e66da8635e0ea0926835c1c720"
+    sha256 cellar: :any, x86_64_linux:      "1cecbcf0a48d3fc767b9612d985ab1626f204c8069e35e9d0f25c2b2c915edfe"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +27,7 @@ class Rawdog < Formula
   depends_on "rpds-py" => :no_linkage
 
   on_linux do
-    depends_on "openssl@3" # for hf-xet
+    depends_on "openssl@4" # for hf-xet
   end
 
   pypi_packages exclude_packages: ["certifi", "pydantic", "rpds-py"]
