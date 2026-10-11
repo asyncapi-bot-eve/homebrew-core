@@ -2,6 +2,7 @@ class Rustup < Formula
   desc "Rust toolchain installer"
   homepage "https://rust-lang.github.io/rustup/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 1
   head "https://github.com/rust-lang/rustup.git", branch: "main"
 
@@ -24,13 +25,12 @@ class Rustup < Formula
 
   keg_only "it conflicts with rust"
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  uses_from_macos "xz"
+  depends_on "xz"
 
   on_linux do
-    depends_on "pkgconf" => :build
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   # Test downloads a Rust toolchain
