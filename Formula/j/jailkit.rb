@@ -22,7 +22,7 @@ class Jailkit < Formula
     sha256 x86_64_linux:      "48db655b0b901abb3a6caaedbc6609a3a36fea0601676f23bf3894ddb800626c"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   deny_network_access!
 
