@@ -1,8 +1,8 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
   homepage "https://github.com/realsenseai/librealsense"
-  url "https://github.com/realsenseai/librealsense/archive/refs/tags/v2.58.4.tar.gz"
-  sha256 "3d07cafd0fc5c1b1803e1f6418cf7375a387593e873d3897015b8ec94be20e74"
+  url "https://github.com/realsenseai/librealsense/archive/refs/tags/v2.59.1.tar.gz"
+  sha256 "8de92d31412c272b62fc14b830bb17e5c16d6adda6d1c156009ebdfb4aa02f20"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/realsenseai/librealsense.git", branch: "master"
@@ -38,8 +38,10 @@ class Librealsense < Formula
       -DBUILD_WITH_OPENMP=OFF
       -DCMAKE_CXX_STANDARD=17
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCHECK_FOR_UPDATES=OFF
+      -DENABLE_AI_ASSISTANT=OFF
+      -DENABLE_STATS=OFF
     ]
-    args << "-DCHECK_FOR_UPDATES=false" if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
