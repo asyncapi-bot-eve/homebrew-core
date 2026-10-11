@@ -9,8 +9,8 @@ class Gprof2dot < Formula
   head "https://github.com/jrfonseca/gprof2dot.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b4fe6eb97205fb481b755d57628c8bcdbd35a8865910bec37ced4a858d460796"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "622db685b7875f54dca12bea87b9c86cfb9addf6e1bc1460d94a5899385a9c9f"
   end
 
   depends_on "graphviz"
