@@ -18,7 +18,7 @@ class Cython < Formula
     sha256 cellar: :any,                 x86_64_linux:      "30813a87f3a151bd3dc797dfcab7a69a3d7310a096c38e42aa771b7172b6e6fe"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   # https://github.com/cython/cython/issues/5976
   pypi_packages extra_packages: "setuptools"
