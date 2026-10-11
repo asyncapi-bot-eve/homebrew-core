@@ -1,10 +1,10 @@
 class Libmsquic < Formula
   desc "Cross-platform, C implementation of the IETF QUIC protocol"
   homepage "https://github.com/microsoft/msquic"
-  url "https://github.com/microsoft/msquic.git",
-      tag:      "v2.6.2",
-      revision: "819ab74f851ee168504cbc392ec32e7bed1d82e9"
+  url "https://github.com/microsoft/msquic/archive/refs/tags/v2.6.2.tar.gz"
+  sha256 "206e4604eb7ffbc496eb4df804afaaba4814c2bbfdb18fdb142172301b74c8c0"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -20,16 +20,16 @@ class Libmsquic < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
+
+  deny_network_access!
 
   def install
     args = %w[
-      -DQUIC_USE_SYSTEM_LIBCRYPTO=true
       -DQUIC_BUILD_PERF=OFF
       -DQUIC_BUILD_TOOLS=OFF
-      -DHOMEBREW_ALLOW_FETCHCONTENT=ON
-      -DFETCHCONTENT_FULLY_DISCONNECTED=ON
-      -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
+      -DQUIC_TLS_LIB=openssl
+      -DQUIC_USE_EXTERNAL_OPENSSL=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -57,7 +57,7 @@ class Libmsquic < Formula
           return 0;
       }
     CPP
-    system ENV.cxx, example, "-I#{include}", "-L#{lib}", "-lmsquic", "-o", "test"
+    system ENV.cxx, "-std=c++17", example, "-I#{include}", "-L#{lib}", "-lmsquic", "-o", "test"
     assert_equal "MsQuicOpen2 succeeded", shell_output("./test").strip
   end
 end
