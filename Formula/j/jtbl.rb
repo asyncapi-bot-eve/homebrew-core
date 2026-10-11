@@ -9,8 +9,8 @@ class Jtbl < Formula
   head "https://github.com/kellyjonbrazil/jtbl.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "72309a9ade71950be9675e9b57c336177ffd5a84b058634d0b4bdcb6466b7e9a"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "e7ece66dbc2f33abd65e261d5811bd20cd1277c520cef65b072ce05eae0fe6d7"
   end
 
   depends_on "python@3.15"
