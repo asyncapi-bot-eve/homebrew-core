@@ -1,8 +1,8 @@
 class Workmux < Formula
   desc "Git worktrees + tmux windows for zero-friction parallel dev"
   homepage "https://workmux.raine.dev"
-  url "https://github.com/raine/workmux/archive/refs/tags/v0.1.272.tar.gz"
-  sha256 "c669811ef75470f43c048b4e87607b869624cf18b61f4f0f65ba2c2ece079b29"
+  url "https://github.com/raine/workmux/archive/refs/tags/v0.1.273.tar.gz"
+  sha256 "cbac0eedcd3d9f21a172a9b9f3a6f93f0f104ec4bfdcbdf14f7d00ce65280b0c"
   license "MIT"
 
   bottle do
