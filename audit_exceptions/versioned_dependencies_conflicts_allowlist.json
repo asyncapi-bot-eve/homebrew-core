@@ -1,5 +1,4 @@
 [
-  "cdxgen",
   "cyan",
   "hive",
   "julia",
@@ -8,6 +7,5 @@
   "neomutt",
   "opencoarrays",
   "sapling",
-  "thors-anvil",
-  "undercutf1"
+  "thors-anvil"
 ]

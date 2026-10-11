@@ -2,6 +2,7 @@ class Dotnet < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
+  revision 1
   version_scheme 1
   compatibility_version 7
 
@@ -36,6 +37,15 @@ class Dotnet < Formula
             v if v.patch.to_i.between?(100, 199)
           end
         end
+      end
+
+      # Backport OpenSSL 4 support
+      patch do
+        url "https://github.com/dotnet/runtime/commit/73ae2764c385c0f7dd6ecd53aeaa961fd6db508c.patch?full_index=1"
+        sha256 "5238ab26337672635a0ffc969680ef1db8399fa38e769a563a01a39568dbaf28"
+        directory "src/runtime"
+        type :backport
+        resolves "https://github.com/dotnet/runtime/pull/135534"
       end
     end
 
@@ -91,7 +101,7 @@ class Dotnet < Formula
   depends_on "rapidjson" => :build
   depends_on "brotli"
   depends_on "icu4c@78"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "cpio" => :build
   uses_from_macos "python" => :build
