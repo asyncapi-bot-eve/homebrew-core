@@ -4,6 +4,7 @@ class GoHassAgent < Formula
   url "https://github.com/joshuar/go-hass-agent/archive/refs/tags/v14.17.0.tar.gz"
   sha256 "8506161fb719b948ab026c2533bd43b03659d0ac490f6b343fa2b4591f62696c"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "b28eae8c787e0e89d297d555383f9eec39d40a1e77295aa26e93ca559a9d096b"
@@ -12,13 +13,12 @@ class GoHassAgent < Formula
 
   depends_on "go" => :build
   depends_on "node" => :build
-  depends_on :linux
 
   def install
     system "npm", "install", *std_npm_args(prefix: false)
     system "npm", "run", "build:js"
     system "npm", "run", "build:css"
-    ENV["CGO_ENABLED"] = "0"
+    ENV["CGO_ENABLED"] = "1" if OS.linux? && Hardware::CPU.arm?
 
     ldflags = %W[-X github.com/joshuar/go-hass-agent/config.AppVersion=#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin/"go-hass-agent")
