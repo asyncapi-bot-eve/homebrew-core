@@ -8,11 +8,11 @@ class Tox < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6c85b4eb51367d9b857073c6e36bd69cacef045c636cf432528d8792901e5985"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6c85b4eb51367d9b857073c6e36bd69cacef045c636cf432528d8792901e5985"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6c85b4eb51367d9b857073c6e36bd69cacef045c636cf432528d8792901e5985"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ff2f8b61958933ce4929208b7458a9006dc007581d98598d4a22bc7e4276db8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff2f8b61958933ce4929208b7458a9006dc007581d98598d4a22bc7e4276db8b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d754854ea2f7159b24a93694d36f63fcd2532941d2336cbeca6213ca8a14133"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d754854ea2f7159b24a93694d36f63fcd2532941d2336cbeca6213ca8a14133"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1d754854ea2f7159b24a93694d36f63fcd2532941d2336cbeca6213ca8a14133"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "70e56c8b250e8bd6db827df3e6b9fabf87a6e00665e738f55204eb39e3baa4ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "70e56c8b250e8bd6db827df3e6b9fabf87a6e00665e738f55204eb39e3baa4ee"
   end
 
   depends_on "python@3.15"
