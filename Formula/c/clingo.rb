@@ -30,7 +30,7 @@ class Clingo < Formula
   depends_on "doxygen" => :build
   depends_on "cffi"
   depends_on "lua"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   # This formula replaced the clasp & gringo formulae.
   # https://github.com/Homebrew/homebrew-core/pull/20281
