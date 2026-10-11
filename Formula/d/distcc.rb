@@ -51,7 +51,7 @@ class Distcc < Formula
   end
 
   depends_on "python-setuptools" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     ENV["PYTHON"] = python3
