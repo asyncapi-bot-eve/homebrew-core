@@ -9,11 +9,12 @@ class Gitingest < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "92162e9ec3dadd4b61339b07c70c3d38b9dcd42a69ff132009a55f4e73f63ffa"
-    sha256 cellar: :any, arm64_tahoe:       "68e970a83d016b09ed9733f4d52f1520ce8a8a5fc9fdfab4c6ea7c878af589f4"
-    sha256 cellar: :any, arm64_sequoia:     "a3d99c796a0389ce5505f72cf49bdaa7c0f1cd9fda199ba19a16ed49c081e3d7"
-    sha256 cellar: :any, arm64_linux:       "f867ab7198c0acda8d2667a3589ba7c652d97280b9630ae80df6c9861ae5b95c"
-    sha256 cellar: :any, x86_64_linux:      "93d1b6622ce5ede2bdcd7bb6c92dea853480c5addfe49a1ef2082f6dbb21f2da"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e42812f54fe3a3ebd6645054110519c57e9f9b10f620e74392a9dd4ebbad6a57"
+    sha256 cellar: :any, arm64_tahoe:       "994d1e1fa5c0ad8fe0b52aab3c17e3d82acb70c8ca9ac82ae965f6896b54e7e5"
+    sha256 cellar: :any, arm64_sequoia:     "aeb43be6de61e8f4edc3d184d8b1bf98ac3029dca8c7112f68ed499e7dabd2a9"
+    sha256 cellar: :any, arm64_linux:       "1ac9ae0b71397befc088d54b242622a339b66af1ad1c9a6589907424667f923f"
+    sha256 cellar: :any, x86_64_linux:      "f2fa104dc7ebddd3d2abdd092ad660d6313dac56bbaa407e81eddb916a6fd625"
   end
 
   depends_on "rust" => :build # for tiktoken
