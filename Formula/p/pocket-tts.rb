@@ -6,6 +6,7 @@ class PocketTts < Formula
   url "https://files.pythonhosted.org/packages/56/e4/08262e47704291a99c211515b17e754d4891a899323a8171e220f468e45b/pocket_tts-3.3.0.tar.gz"
   sha256 "997b3dd39d43c0555cdd9b8efd72ac926dbfcd250fb5f3575aa29c33db5b6621"
   license "MIT"
+  revision 1
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
@@ -27,7 +28,7 @@ class PocketTts < Formula
   depends_on "scipy" => :no_linkage
 
   on_linux do
-    depends_on "openssl@3" # for hf-xet
+    depends_on "openssl@4" # for hf-xet
   end
 
   pypi_packages exclude_packages: %w[certifi pydantic scipy torch]
