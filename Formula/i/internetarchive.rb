@@ -14,7 +14,7 @@ class Internetarchive < Formula
   end
 
   depends_on "certifi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 
@@ -29,13 +29,13 @@ class Internetarchive < Formula
   end
 
   resource "jsonpatch" do
-    url "https://files.pythonhosted.org/packages/42/78/18813351fe5d63acad16aec57f94ec2b70a09e53ca98145589e185423873/jsonpatch-1.33.tar.gz"
-    sha256 "9fcd4009c41e6d12348b4a0ff2563ba56a2923a7dfee731d004e212e1ee5030c"
+    url "https://files.pythonhosted.org/packages/2c/29/8f7262f848569fe374b34a0f09e6d366bdd5ac82081edbecd5fd104fe9fc/jsonpatch-1.34.tar.gz"
+    sha256 "e60c9f2d903d261d6eddcbd12cf3193efdb58cd9376a36ccc4db2e29d6cc88e3"
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/18/c7/af399a2e7a67fd18d63c40c5e62d3af4e67b836a2107468b6a5ea24c4304/jsonpointer-3.1.1.tar.gz"
-    sha256 "0b801c7db33a904024f6004d526dcc53bbb8a4a0f4e32bfd10beadf60adf1900"
+    url "https://files.pythonhosted.org/packages/5a/30/76a208d3eb75a5e2bcfec4e132c207ea1e22253d10b52a06c8ff3839dfc9/jsonpointer-3.2.0.tar.gz"
+    sha256 "807db557622fbe07a0d49e19cf4795a269d55eee5ba345fb9959d148eba5ef94"
   end
 
   resource "requests" do
