@@ -9,11 +9,12 @@ class CharmTools < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "47c85e9649fdf49f090c6fff8828ed2ba3db1f9ccb8c4d98afaee030bbcfee20"
-    sha256 cellar: :any, arm64_tahoe:       "8c916dd97397aec1792774006d2088147fd4e2401b2cc2bb1ed3317a25a85d79"
-    sha256 cellar: :any, arm64_sequoia:     "e6fe42ca4a792c1dbec6ac1069a32fe9d4cd76bb552e92af017f10597d54f29c"
-    sha256 cellar: :any, arm64_linux:       "5259839cbcddca1ca5f3ce480014b61a34ffb3126946039b935787591beeb90f"
-    sha256 cellar: :any, x86_64_linux:      "59391a2b843c37b1542583677a94aef7b64c3ae55b19497ff748de9bbca3b153"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "31405c0ada15a4c8d4630e2eedac24d3e3b90575fe012a0d235d5c234c996d2e"
+    sha256 cellar: :any, arm64_tahoe:       "c5b94902d0459fb5176804709ffcfdf713f1697e455080d6c30d20615e065639"
+    sha256 cellar: :any, arm64_sequoia:     "fa725a4426ab04cbbb895fa8abe1bf7d03c07de0e254b5ea5f559a6b53fb94d1"
+    sha256 cellar: :any, arm64_linux:       "5b69ce2a8ca38ed765635b6b276b6c150963c098a1aa1759f425cca2f4ceb8ca"
+    sha256 cellar: :any, x86_64_linux:      "ec6aa2da19d5bdfd2b8cd92af9e105f9888421e23cf208a14ae7d4b73c30c634"
   end
 
   depends_on "certifi"
