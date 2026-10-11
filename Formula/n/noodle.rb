@@ -5,6 +5,14 @@ class Noodle < Formula
   sha256 "b1678e5807c4368b3c502002b6f75f61dc7a16eb9c370db10493c8e171674347"
   license "Apache-2.0"
 
+  bottle do
+    sha256 arm64_golden_gate: "8385a3b6dc42edec08c42ba7b0ed1d14164ee5ec420127d25cd236b5c78e174f"
+    sha256 arm64_tahoe:       "1ddf5340e09c5e720e032e558836ac6a5adea9697ab1efb4c8b4d3799ade017f"
+    sha256 arm64_sequoia:     "d757b04783b64e518f49cc70ae9c41052f04382b503ed2981bbab9030f9bfffb"
+    sha256 arm64_linux:       "e2c438752dcbb0caa4a971847b051deba627c573736bc515d4212edd5a8e89aa"
+    sha256 x86_64_linux:      "668006f56dd3bd53b7b5fdea1a51ff6136e73b56cdfcc8b3a862bc76c03fd4d2"
+  end
+
   depends_on "bun" => :build
   # TODO: Use zig when Noodle's OpenTUI build supports Zig 0.17.
   # https://github.com/anomalyco/opentui/pull/1586
