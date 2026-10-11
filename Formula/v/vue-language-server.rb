@@ -6,11 +6,11 @@ class VueLanguageServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c830a321b09cab7ff811c1a263c2ac9214898b0ab7e994c304fec76d5f5ac6f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c830a321b09cab7ff811c1a263c2ac9214898b0ab7e994c304fec76d5f5ac6f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c830a321b09cab7ff811c1a263c2ac9214898b0ab7e994c304fec76d5f5ac6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5fe4a1579ebc3aab52df203d8a8c108387ebe0120d29090859d69388db06fe03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7f4182f5b92a73cb033b66ef65875bb027b3f9c7dcbd532378194e8532473a6e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0d601455a0c5e2c3c36afd487ef8e59324a7e10a841dcd77374cea3d6aa53f9e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d601455a0c5e2c3c36afd487ef8e59324a7e10a841dcd77374cea3d6aa53f9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d601455a0c5e2c3c36afd487ef8e59324a7e10a841dcd77374cea3d6aa53f9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a9394f78fe2a9536413963aa76efae87d2ba0da265c34cb5b4d40dfa788661b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5d1b370052bb1abb4e2bc8047b14f940ded3ffa6437badb66d330718fa37f695"
   end
 
   depends_on "node"
