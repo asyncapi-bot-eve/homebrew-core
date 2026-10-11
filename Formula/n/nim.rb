@@ -4,6 +4,7 @@ class Nim < Formula
   url "https://nim-lang.org/download/nim-2.2.12.tar.xz"
   sha256 "2639a06a5ea7a7fcf57df1e7e1ef4d1b2bee58c7ac9bd00dbd2aa5bea1e5a56a"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
@@ -24,7 +25,7 @@ class Nim < Formula
   depends_on "help2man" => :build
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   conflicts_with "atlas", "mongodb-atlas-cli", because: "both install `atlas` executable"
