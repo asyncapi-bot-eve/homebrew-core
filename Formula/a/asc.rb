@@ -16,6 +16,8 @@ class Asc < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "asccli", because: "both install `asc` binaries"
+
   deny_network_access!
 
   def fetch

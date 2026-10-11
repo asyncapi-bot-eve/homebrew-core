@@ -17,6 +17,8 @@ class Asccli < Formula
 
   uses_from_macos "swift" => :build
 
+  conflicts_with "asc", because: "both install `asc` binaries"
+
   def install
     # Fix Swift 6.4 runtime compatibility: https://github.com/apple/swift-collections/issues/733
     inreplace "Package.resolved", <<-OLD, <<-NEW
