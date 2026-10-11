@@ -8,11 +8,12 @@ class Gixy < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f411dd7f9edd6bd6453f0756e308412106bd2143a766c410317aebbbf3b1ba6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "08d634eaf35f179c26c0bf377ba4eda881da4372d9dff4d3b647a3188d62e01b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d9ac6ac198d406cbcfa10697bebd1cf4d9de97617c96b95e253b8a13a841ea8f"
-    sha256 cellar: :any,                 arm64_linux:       "fdac3e352ecc35766ddbd63aef82048746e9ca604d2283ce51b29a679edc0dc9"
-    sha256 cellar: :any,                 x86_64_linux:      "0c1469c94954f3aa281af81600c3fef2ef9b620a78f9470542f190c4e766ebf2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5f45796934cb1e2b5f11535789e4931692062d874f62b311a3fb63673137ffd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a62ab18602510f09b979e901e49e9bd39b2ccd801d61c79c9e535144dbec09af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ad1abaccf18b9a88176d15f72e619729c36bf09eb72a67253a75a15e387445c6"
+    sha256 cellar: :any,                 arm64_linux:       "e9d4bc230e0f97ce194d9333c88e81e4ad33a3d117102bdc928d343f2f75a0d7"
+    sha256 cellar: :any,                 x86_64_linux:      "c661fe3bd53f9f83a4b7b3fc504c381b76d6a0aa59349253936d95fc1e9b2594"
   end
 
   depends_on "python@3.15"
