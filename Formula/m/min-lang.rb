@@ -4,6 +4,7 @@ class MinLang < Formula
   url "https://git.sr.ht/~h3rald/min/archive/v0.48.1.tar.gz"
   sha256 "baec4d176ff138fcf39784ad97a6a9125454a8d3ccb4db3e6ea59aa2d6716a45"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -21,7 +22,7 @@ class MinLang < Formula
   end
 
   depends_on "nim"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2" => :no_linkage
 
   def install
