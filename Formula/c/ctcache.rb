@@ -8,7 +8,8 @@ class Ctcache < Formula
   license "BSL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1095ce39da59838eafcbc6c6613d557c6e2bd9fe17e3e3c1213cb4585c6e6c04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f4d1bb12ce49b05ad4c90d6684c8915f9d38601d24f446e9010cd01377e0fbc3"
   end
 
   depends_on "certifi" => :no_linkage
