@@ -1,8 +1,8 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://github.com/dartsim/dart/archive/refs/tags/v6.19.5.tar.gz"
-  sha256 "86539ba78f28a4e0d54eaac961a7b08c09d10ff6518ee77e401796133157bee0"
+  url "https://github.com/dartsim/dart/archive/refs/tags/v6.20.0.tar.gz"
+  sha256 "a203ee8c812b6b4a057b113eee15142da434a54d9f4c119c06a788defa80a30b"
   license "BSD-2-Clause"
 
   livecheck do
@@ -43,11 +43,25 @@ class Dartsim < Formula
     depends_on "mesa"
   end
 
+  # Keep DART's bundled ImGui compatibility patches without downloading during CMake.
+  resource "imgui" do
+    url "https://github.com/ocornut/imgui/archive/refs/tags/v1.92.8.tar.gz"
+    sha256 "fecb33d33930e12ff53a34064e9d3a06c8f7c3e04408f14cd36c80e3faac863b"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/dartsim/dart/refs/tags/v#{LATEST_VERSION}/dart/gui/imgui/CMakeLists.txt"
+      regex(/set\(IMGUI_TARGET_VERSION\s+"v?(\d+(?:\.\d+)+)"\)/i)
+    end
+  end
+
   def install
+    resource("imgui").stage buildpath/"imgui"
+
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DDART_BUILD_DARTPY=OFF
       -DDART_ENABLE_SIMD=OFF
+      -DFETCHCONTENT_SOURCE_DIR_DART_IMGUI=#{buildpath}/imgui
     ]
 
     if OS.mac?
