@@ -4,6 +4,7 @@ class Bacon < Formula
   url "https://github.com/Canop/bacon/archive/refs/tags/v3.26.0.tar.gz"
   sha256 "d86249d01175f83ce30c7d52d36ed3422855c7eef00907161e673d490955702d"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://github.com/Canop/bacon.git", branch: "main"
 
   bottle do
@@ -26,6 +27,7 @@ class Bacon < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"bacon", shell_parameter_format: :clap)
   end
 
   test do
