@@ -6,7 +6,7 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/refs/tags/2.37.12.tar.gz"
   sha256 "6017e96c81b533894e26c3623fad446acdf11115cf695dce78da010874758899"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -91,6 +91,13 @@ class Awscli < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/c7/24/5f1b3bdffd70275f6661c76461e25f024d5a38a46f04aaca912426a2b1d3/urllib3-2.6.3.tar.gz"
     sha256 "1b62b6884944a57dbe321509ab94fd4d3b307075e0c2eae991ac71ee15ad38ed"
+
+    # Backport fix for OpenSSL 4 until awscli updates urllib3 pin to allow 2.8.0
+    patch do
+      url "https://github.com/urllib3/urllib3/commit/627636551e0e0159996b0f28dd21a60372cc5b10.patch?full_index=1"
+      sha256 "6e5f13b1b60313fbd8a70d0aab58f7c6a413f641ad6fa2e5a3539e3de68bbe27"
+      type :backport
+    end
   end
 
   resource "wcwidth" do
@@ -98,10 +105,14 @@ class Awscli < Formula
     sha256 "4d478375d31bc5395a3c55c40ccdf3354688364cd61c4f6adacaa9215d0b3605"
   end
 
-  # downloads wheels during build
+  # downloads sdists during build for build-system dependencies
   allow_network_access! :build
 
   def install
+    urllib3 = resource("urllib3")
+    odie "Remove urllib3 check as version is now >= 2.8.0!" if urllib3.version >= "2.8.0"
+    odie "Restore urllib3 patch!" if urllib3.patches.empty?
+
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO"] = "1"
     ENV["AWS_CRT_BUILD_USE_SYSTEM_LIBS"] = "1"
     # Avoid overlinking to aws-c-* indirect dependencies
