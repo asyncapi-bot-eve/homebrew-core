@@ -653,19 +653,19 @@ class Oterm < Formula
   end
 
   def install
-    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG for primp
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
-    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+    ENV.append_to_rustflags "--codegen link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
     without = ["hf-xet"]
     without += %w[jeepney secretstorage] unless OS.linux?
     venv = virtualenv_install_with_resources(without:)
 
     resource("hf-xet").stage do
-      # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
-      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
+      # Use native-tls rather than needing to build another rustls + aws-lc
+      inreplace %w[xet_client/Cargo.toml xet_data/Cargo.toml xet_pkg/Cargo.toml],
+                'default = ["rustls-tls"]', 'default = ["native-tls"]'
       venv.pip_install Pathname.pwd
     end
 
