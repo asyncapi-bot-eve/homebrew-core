@@ -24,7 +24,7 @@ class FbClient < Formula
 
   depends_on "curl"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
 
@@ -32,8 +32,8 @@ class FbClient < Formula
                 extra_packages: ["pycurl", "pyxdg"]
 
   resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/95/23/cc07b16591af8ca373494d29aafc8df13e547077579e6779bb865a3f5a7f/pycurl-7.46.0.tar.gz"
-    sha256 "422ed7005b98768fe60fe6b6cb8bb6a4e1fc18b5433402e8fbdaba91811c4604"
+    url "https://files.pythonhosted.org/packages/fe/62/5851dbbaba9b8ba69019ee74213f1c31b0b2b7ba643ad48e9407638b0dea/pycurl-7.48.0.tar.gz"
+    sha256 "b70961a76c412cd34f9cc2c9558e63f89fb37045c59eee396c585b52973be280"
   end
 
   resource "pyxdg" do
