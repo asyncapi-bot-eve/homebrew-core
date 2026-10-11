@@ -7,13 +7,11 @@ class Mad < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "8c5c6d715a2d653fcc2d452f7bb71d668c2caca86cd81ca4d8ade8a0f57b265e"
-    sha256 cellar: :any,                 arm64_tahoe:       "c2f1263d0123e856bc3b10b59ec49ce8533a75f8bf46c9829a19a482134a8b33"
-    sha256 cellar: :any,                 arm64_sequoia:     "3f9a2384ea3a1c732897a5759b0a4c1dba5f3bc484e89288d7472f55ea1f7152"
-    sha256 cellar: :any,                 arm64_sonoma:      "a46ffe14f2184a90ca8e60d0b30978cd673e9f943c55e9554bea0e7646e1f4f3"
-    sha256 cellar: :any,                 sonoma:            "4e6025e114bad469457fd64a2710501afcdb3309c1d5c663cfccc90a9f7c37fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6f504b4d003538ab8007b64bba565fee86f8610a7107bf682c6e72ebaea4f30f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a05120955044b8c9a997b7084b5a08f5d913e5a48f7575ea72d4ff07cd620fab"
+    sha256 cellar: :any, arm64_golden_gate: "b27f2d1b0265c6efa3d5af77f303aef8b47753bc69ac9d4060b19ad9126b0102"
+    sha256 cellar: :any, arm64_tahoe:       "0fcfb44bdf6c65c9d3578114baaaae4f3a2a7cad32d5985974d4bf5cb499d2d0"
+    sha256 cellar: :any, arm64_sequoia:     "d897ca79730bce903a767a9cd310dfa9a18d0df0bb8b483541197264c6cbff3a"
+    sha256 cellar: :any, arm64_linux:       "cb79367bd046df2fbbcf6149ba040f2e345c445c1c8c0abe52d3c28fb878e7ff"
+    sha256 cellar: :any, x86_64_linux:      "b48a4fbf2823cf570cbc1ba7afe186d9f53456a39d4ddc29b24fe2aee99c048d"
   end
 
   depends_on "cmake" => :build
