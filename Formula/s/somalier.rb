@@ -4,6 +4,7 @@ class Somalier < Formula
   url "https://github.com/brentp/somalier/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "506f540589495cdc933b5c9e014f01b16261a567e003bcce60afbcf8de4519a8"
   license "MIT"
+  revision 1
   head "https://github.com/brentp/somalier.git", branch: "master"
 
   bottle do
@@ -17,7 +18,6 @@ class Somalier < Formula
   depends_on "nim" => :build
   depends_on "htslib"
   depends_on "libdeflate"
-  depends_on "openssl@3"
   depends_on "xz"
 
   uses_from_macos "bzip2"
@@ -184,13 +184,11 @@ class Somalier < Formula
       "--passC:-I#{formula_opt_include("htslib")}",
       "--passL:-L#{formula_opt_lib("htslib")} -lhts",
       "--passL:-L#{formula_opt_lib("libdeflate")} -ldeflate",
-      "--passL:-L#{formula_opt_lib("openssl@3")} -lcrypto -lssl",
       "--passL:-L#{formula_opt_lib("xz")} -llzma",
       "--passL:-lz -lbz2 -lcurl",
       "--dynlibOverride:hts",
       "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("htslib"))}",
       "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("libdeflate"))}",
-      "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("openssl@3"))}",
       "--passL:-Wl,-rpath,#{rpath(target: formula_opt_lib("xz"))}",
     ]
 
