@@ -6,6 +6,14 @@ class Tinycbor < Formula
   license "MIT"
   head "https://github.com/intel/tinycbor.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any, arm64_golden_gate: "f44713aa4e533fc1d98eb66deb4831ef7e52b23e743df4863b691b7a9456ae49"
+    sha256 cellar: :any, arm64_tahoe:       "7134cf185af770f50043214055e03a195965f64640a2b0105dd431ef1021c9f7"
+    sha256 cellar: :any, arm64_sequoia:     "e7c4a105988b2cabfdd3f96ffaed4461262a08934f5922a522ceaa1a3e1dbbb8"
+    sha256 cellar: :any, arm64_linux:       "b0236b839d3c5f001aa0430187e74795100db22db489e2d7037545a52878692f"
+    sha256 cellar: :any, x86_64_linux:      "91c850008fe081b286515cb7c36b8e2b4074d81246e4a810caae506827888d8a"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
 
