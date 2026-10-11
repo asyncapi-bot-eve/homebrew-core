@@ -11,7 +11,7 @@ class Jsbeautifier < Formula
     sha256 cellar: :any_skip_relocation, all: "04f3b3efd3fc55b377f684781a83bc467ae023341687e5bdac5806d7672d091e"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "js-beautify", because: "both install `js-beautify` binaries"
 
