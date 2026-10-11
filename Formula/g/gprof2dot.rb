@@ -14,7 +14,7 @@ class Gprof2dot < Formula
   end
 
   depends_on "graphviz"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "libx11"
