@@ -10,11 +10,12 @@ class Forbidden < Formula
   head "https://github.com/ivan-sincek/forbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "99c024f26b7c2179bf4bc269ae95049de10a397c127f9942208ed1f2c645c718"
-    sha256 cellar: :any, arm64_tahoe:       "ad162a1d4a940d34b8f3f36e33595a3fba2ce3cb725f2a0fa0889bfb49a1c12d"
-    sha256 cellar: :any, arm64_sequoia:     "40e8d009d0706f49a3b7c2a16fb562cacb7c1775af5153f3dc995d10401f7b8a"
-    sha256 cellar: :any, arm64_linux:       "9f0be83921bed57a382ee8869f6edfa7e137306907d5e42999545efed8ea3dbe"
-    sha256 cellar: :any, x86_64_linux:      "5807603f90ef74f25b05fde50ceacb9fd5a39174e2d3fdbd46e402c74d151401"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "d80e61a72686b81ed5733c7a02f6e90151ff5989eba9c25f09b9b79b58fb013b"
+    sha256 cellar: :any, arm64_tahoe:       "a371f6d19deaa3e096bac512c40e08f509a08e923c4a0418354f4bb08e49de53"
+    sha256 cellar: :any, arm64_sequoia:     "c262822dee2838acdaf320cf0016042eba7fb36352db785360efe65b60df9fcd"
+    sha256 cellar: :any, arm64_linux:       "41dbb7dc0aabd66d1eb582e34a9cd5a98023d4cfdb67a93c2d13c6af4007dd53"
+    sha256 cellar: :any, x86_64_linux:      "432346dfd83dd4bfbbaa4bdfc1ea20bcdc1c9f7c407fec842d1e91551d58b238"
   end
 
   depends_on "certifi" => :no_linkage
