@@ -13,7 +13,7 @@ class Legit < Formula
     sha256 cellar: :any_skip_relocation, all: "989165656b76d81105aac1f9364519b168d778ca1d387531b1eb0e7fabba38c5"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "args" do
     url "https://files.pythonhosted.org/packages/e5/1c/b701b3f4bd8d3667df8342f311b3efaeab86078a840fb826bd204118cc6b/args-0.1.0.tar.gz"
