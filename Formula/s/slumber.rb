@@ -4,6 +4,7 @@ class Slumber < Formula
   url "https://github.com/LucasPickering/slumber/archive/refs/tags/v5.3.0.tar.gz"
   sha256 "f32b4bbcb624ac6d8b05feef5326a19797c8fce62f92e1b6f5185b8f01bc381d"
   license "MIT"
+  revision 1
   head "https://github.com/LucasPickering/slumber.git", branch: "master"
 
   bottle do
@@ -26,6 +27,7 @@ class Slumber < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"slumber", shell_parameter_format: :clap)
   end
 
   test do
