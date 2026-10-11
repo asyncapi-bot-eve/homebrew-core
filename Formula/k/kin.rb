@@ -12,7 +12,7 @@ class Kin < Formula
     sha256 cellar: :any_skip_relocation, all: "dd69c1bd084dbbecc3d4ff68172f53477ffb6d1fb611caa42ca11f1fc1b21ae8"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "antlr4-python3-runtime" do
     url "https://files.pythonhosted.org/packages/b6/00/7f1cab9b44518ca225a03f4493ac9294aab5935a7a28486ba91a20ea29cf/antlr4-python3-runtime-4.13.1.tar.gz"
