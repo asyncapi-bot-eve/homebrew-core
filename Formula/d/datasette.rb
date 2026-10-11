@@ -9,11 +9,12 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "68f2c0c1cfe3b4a1fc002c5195560da1798949aa199cfcb01a4b1b320c09bb93"
-    sha256 cellar: :any, arm64_tahoe:       "213d8cb6ceac9101985be5d9400413ae5a6fc70e8a674d991174596c77234f6a"
-    sha256 cellar: :any, arm64_sequoia:     "64051dc567ba7ea77913df29be416a744f137fcd675e02be2bc4eec000d92b76"
-    sha256 cellar: :any, arm64_linux:       "a4c1f8d0b8a970395864aedb1cd945b307041a0d712bece935d3cffdc3c1718a"
-    sha256 cellar: :any, x86_64_linux:      "27c2729b44ac421858b3be802e8982839c97444212a0574236f117621850a49b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "3e05ab77d7e4291bc47277dba39c2d8e79b48088711234ab5e08ddf364b29050"
+    sha256 cellar: :any, arm64_tahoe:       "8084224fd4f055d917a7b39016ab3494aacfa4ae8a7aea65ba7eaae8304c2a3c"
+    sha256 cellar: :any, arm64_sequoia:     "4cc8cf7c84e2b515a1d9add3a9d8babfda33ee514339fd58750e188958f8303c"
+    sha256 cellar: :any, arm64_linux:       "fe8e264df8df38ba487cecb38b71340023c0253a970a3973ea3ba89fa4071f17"
+    sha256 cellar: :any, x86_64_linux:      "cfe3f1a32eed8e464bb010a72882d71058caf5f989e2e33b94723cdabfe789d7"
   end
 
   depends_on "certifi" => :no_linkage
