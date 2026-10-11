@@ -3,16 +3,16 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/a8/2d/5b75b6e0fd3edc17bdfbf8adc343b3db17c7e3825ac601375dffbeead191/tox-4.65.1.tar.gz"
-  sha256 "bdbb7bd715a638f6a3f9eb6ffabd91c870db12de7ee2ba4d2c7c9af632f016ca"
+  url "https://files.pythonhosted.org/packages/b4/66/7b490d0454f3fe441c46ec550808c17483a3f29132037e7a475b51df499f/tox-4.65.2.tar.gz"
+  sha256 "6bbac6aca06f21aec1e5c840b8428c49d7d03511bf9bb52c02612c064deb764d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d754854ea2f7159b24a93694d36f63fcd2532941d2336cbeca6213ca8a14133"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d754854ea2f7159b24a93694d36f63fcd2532941d2336cbeca6213ca8a14133"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1d754854ea2f7159b24a93694d36f63fcd2532941d2336cbeca6213ca8a14133"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "70e56c8b250e8bd6db827df3e6b9fabf87a6e00665e738f55204eb39e3baa4ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "70e56c8b250e8bd6db827df3e6b9fabf87a6e00665e738f55204eb39e3baa4ee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "21fad753dbfaf87d9434fb9cf455e2b74dda4c2537e8e6fe15a2e0ea266e96ff"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21fad753dbfaf87d9434fb9cf455e2b74dda4c2537e8e6fe15a2e0ea266e96ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "21fad753dbfaf87d9434fb9cf455e2b74dda4c2537e8e6fe15a2e0ea266e96ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d92ddc9ad7b717244edfa64627f3211ec9931f4649f4aacbdb3e770a83073ba1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d92ddc9ad7b717244edfa64627f3211ec9931f4649f4aacbdb3e770a83073ba1"
   end
 
   depends_on "python@3.15"
@@ -53,8 +53,8 @@ class Tox < Formula
   end
 
   resource "pyproject-api" do
-    url "https://files.pythonhosted.org/packages/d1/82/9cec47d1613bd5cdd918b82a6ffe54924c5462f1e14c59c71ef238fbc9cf/pyproject_api-1.11.4.tar.gz"
-    sha256 "42332ebb8e5e510a3a9ea498cedb5723134ddd46ddfe2d07693917b2ebea22a7"
+    url "https://files.pythonhosted.org/packages/3c/e1/148e4bbb469b26b6648dac4ee292aed80c1205c06ecd2e32987c7ed3e6f5/pyproject_api-1.11.5.tar.gz"
+    sha256 "79294e79953a30fd3eac04bdf8b57241d33e2c8b7230b94c1b76e4d765fe09ad"
   end
 
   resource "python-discovery" do
