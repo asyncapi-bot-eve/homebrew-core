@@ -8,12 +8,12 @@ class Fusesoc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "401b3322c036083f4843059999d0711cc093bc7db97a5fe0ea20f9d0a75d6af5"
-    sha256 cellar: :any, arm64_tahoe:       "314e1a7ce168a9abf6988646c7c3595683b49a556aed989bb7e0180e800416da"
-    sha256 cellar: :any, arm64_sequoia:     "ec49e8a6830ee3294543f7c39d1c799460317fed04967e6a4022703037c2431b"
-    sha256 cellar: :any, arm64_sonoma:      "b03c499d31c652306c59d938b3e271ea4c2b6fab398b2c9a8c9b898fa8861c1e"
-    sha256 cellar: :any, arm64_linux:       "c8165eac9bcc80219cc65a9c687f1213451a173dd0876421939b270b4e60dfe9"
-    sha256 cellar: :any, x86_64_linux:      "9e2f65ab5169e50aff6220ff388ce323bed235e87467eedb3c05087a4921ca2b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "21e1974d9c485bba09fd438522d1d8694c746d3a43ac8a3c5ddf60772c5ea0ca"
+    sha256 cellar: :any, arm64_tahoe:       "702b90d2325ecf4039100792e6fc0e1a0084a7a6bf0ac180360c4b6c951d126e"
+    sha256 cellar: :any, arm64_sequoia:     "ac4347a287d12695ab54e71ae535d4c2ad78fc9a8dc888e9be9e40abf6954819"
+    sha256 cellar: :any, arm64_linux:       "1fc25a6fe00771966116a15f061b51adb8e50edd05afb9518452c14948c83023"
+    sha256 cellar: :any, x86_64_linux:      "6970c07dd67eccdaf9bbf86dc9e64cffac6a90f47d64d2d5746e15dd98e336b8"
   end
 
   depends_on "libyaml"
