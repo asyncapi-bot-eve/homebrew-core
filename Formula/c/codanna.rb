@@ -6,11 +6,11 @@ class Codanna < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2b82a76531fbb97bf3d7d26876eb5b8fe4c12aede3a94a4e7529e18029663a5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5b06b6b36aec5421a0e686a9aa75750bf3e067fbcc47445b590ce1c817c3d61a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fa4609aa51674906cf27f64a4458cbdf531a881a50f0bea640f5c6d8910a2f2c"
-    sha256 cellar: :any,                 arm64_linux:       "1c40d822de2227659565f4ef0d47fe6ac0375a31c03df5c99db4512d84cc0693"
-    sha256 cellar: :any,                 x86_64_linux:      "9cd3e0732370e708bedff5c40e4ad38f7535601c5b9d9be9c7363ad1ab6849d0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "89b79cd16991f36a49f6aaa33c9016f9fcf07f6796f5593c3f256f48b88302dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "429ec3a5a85220be5dc62468ecb72212e42fc4f18fbcc33109129fe0a5e20c69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64077c214f60c4f56e71c73b825a6370ae8d05a1db1427eb5e5b028cd4037d22"
+    sha256 cellar: :any,                 arm64_linux:       "b4d760a6d1f4dcdd40339fea3c53391fc5c32dbbaf93aa9e246479ab5059b669"
+    sha256 cellar: :any,                 x86_64_linux:      "90f8405226ffd97adf821527f61170341d11834e9f57a3e0081e2107a53d61c8"
   end
 
   depends_on "pkgconf" => :build
