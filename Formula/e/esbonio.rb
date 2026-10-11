@@ -8,13 +8,12 @@ class Esbonio < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d3feba3a000e9d3e29b2186cb668101039d1b16151a7f47c5da437af7903608c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "100f216f03616b6d222161de1747fe482e333a03cce6347f760987f874e968f4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "86a92b25eb73c0fcffeaf6d846b0d6229a905b984eef64d2fafa4905d9acc34a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6c4b1ecc42f9c797121c766925a898124301d621458a95be40ff055669df9a0b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c28e149b9a979df21b4ddb165a0dfd1e3825c037f62dc9769ba8e7ef1c791322"
-    sha256 cellar: :any,                 arm64_linux:       "702e6519514e1c7289a4cf9539bab2f03b5497917a7705883ed4504ec48a3bd6"
-    sha256 cellar: :any,                 x86_64_linux:      "8b0f7b22a8e5927f592fa911ed130c368942d312582960b48be53d455c938574"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "278831a9f7ef18b32165461987eb4293d9ae26e6933c152e976774a4314506e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4de7dff017cf56b5463b1fa7a2ab744eea8c9e45df515dd74fcb738c5eae903f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "183da30c35fba7960d5aae46e549fa85ddf5578223d1667b830293982f388fb6"
+    sha256 cellar: :any,                 arm64_linux:       "dbaa8ed7b88b739f3fb1ffb9ba55d113364b7b77e56bcbb96233c699b8a6f148"
+    sha256 cellar: :any,                 x86_64_linux:      "94fe365da023c42d0882f9026f48ec00e3f0b84ab92824a652f1499a1e88fab8"
   end
 
   depends_on "python@3.15"
