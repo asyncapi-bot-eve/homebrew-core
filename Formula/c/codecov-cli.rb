@@ -10,11 +10,11 @@ class CodecovCli < Formula
   head "https://github.com/codecov/codecov-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "76aad766dfdf79f1469dcae736650a0a838de51428307f335b9cb2375316682a"
-    sha256 cellar: :any, arm64_tahoe:       "cdbb33add5097a4ddd28bb30cb1ca79ceb02fd4afbe4467511a070fc23db2e61"
-    sha256 cellar: :any, arm64_sequoia:     "0d0acb270d5c4d88fec0a95db6fc6eb7030d351314af12f5033de8d3c3a44411"
-    sha256 cellar: :any, arm64_linux:       "8e42212c45cd1a969afbfb26d82f0fbd3d8cff2fa1023a04bb91cf31185562cf"
-    sha256 cellar: :any, x86_64_linux:      "9a8bedcd7b7fff9ac669099bfea1d2ae89aa368fd31672f71a1d7716087eb62c"
+    sha256 cellar: :any, arm64_golden_gate: "668a065c5a554ef24ead2cb3648f9c5d2f9e3825e80cf4dd152bc0cd798a091c"
+    sha256 cellar: :any, arm64_tahoe:       "fda0028173dfe586602db977250e87ff2dbaca9bd4b674a82350546a8cd92e59"
+    sha256 cellar: :any, arm64_sequoia:     "e46bfe5d0fd9d8b9711a3a82a156e59456698a256196a584b50208283b2f84c8"
+    sha256 cellar: :any, arm64_linux:       "a2029da4705290ee2a21f486e329d58d42e95560237299d6d6ca6c58f4d5792a"
+    sha256 cellar: :any, x86_64_linux:      "b7a95e1cae8a19911bc2f7acfa4e1e6b3d2960f6da096d7fde247180ef03763e"
   end
 
   depends_on "rust" => :build
