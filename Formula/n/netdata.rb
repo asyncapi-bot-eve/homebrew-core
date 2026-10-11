@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://github.com/netdata/netdata/releases/download/v2.12.1/netdata-v2.12.1.tar.gz"
   sha256 "39b4aea46a7227391ec592cab41e385af696f286707dd9b40ddfa967d0f24570"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -30,7 +31,7 @@ class Netdata < Formula
   depends_on "libuv"
   depends_on "libyaml"
   depends_on "lz4"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "protobuf"
   depends_on "snappy"
