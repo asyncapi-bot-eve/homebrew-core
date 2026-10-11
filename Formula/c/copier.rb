@@ -8,12 +8,12 @@ class Copier < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3f86df4dba27b6e094baafc6a5737e85ee008de7b1d1046b5f46ce4c0b5522c2"
-    sha256 cellar: :any, arm64_tahoe:       "18954a2ef6eb90a0257b0787a2b6805153c26b4965bda87e87af65a075d7dde7"
-    sha256 cellar: :any, arm64_sequoia:     "c6e3c909b5d23590b7460b4a761b52a411a2dcc607964df33864444a2bf1dd70"
-    sha256 cellar: :any, arm64_sonoma:      "0fcc9df3091fc153325dfc5724953088128bf55d66fe9930dbf0a55fe3ed5e89"
-    sha256 cellar: :any, arm64_linux:       "3b3c75ce04738a7416e5bcd6ff1d717090eae03be8f0354efbe21e437b5661e4"
-    sha256 cellar: :any, x86_64_linux:      "a028d35da1cbe57c1e9dd30b55567ef8c859ce740b679b5ddfa32c46212ec78f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "4b3d465ec14a8d0f90ac4990ba2c3ce50ee59b9290e999a4aad3a15619589b06"
+    sha256 cellar: :any, arm64_tahoe:       "a1e16476de8cebbf7ded6082af309de7b54fc1253e5b8af6c54c612fd908ea70"
+    sha256 cellar: :any, arm64_sequoia:     "3aa901adc6de098438c4c190ba4d48f7fdd79948dbcb2b33425dfe5c6f89a771"
+    sha256 cellar: :any, arm64_linux:       "4aa993d3ec902f65fe4937212d5bdd5b89510601c950225ac66e61ea8ec20570"
+    sha256 cellar: :any, x86_64_linux:      "de0c05432ed331d206539e4a5eb0abf31ec265ee9c46654122a1917cd1de3abf"
   end
 
   depends_on "libyaml"
