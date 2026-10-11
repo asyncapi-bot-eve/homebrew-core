@@ -1,8 +1,8 @@
 class GitPagesCli < Formula
   desc "Tool for publishing a site to a git-pages server"
   homepage "https://codeberg.org/git-pages/git-pages-cli"
-  url "https://codeberg.org/git-pages/git-pages-cli/releases/download/v1.10.1/git-pages-cli-src.zip"
-  sha256 "a4b23a4ef54111b160e9dc749d288ba96645282f78f355bbf28d2b48a1c6a664"
+  url "https://codeberg.org/git-pages/git-pages-cli/releases/download/v1.11.1/git-pages-cli-src.zip"
+  sha256 "ddef443f1d8548558e49ac552aa1456f0dbe79f16607bac6154d7721e7c9230b"
   license "0BSD"
   head "https://codeberg.org/git-pages/git-pages-cli.git", branch: "main"
 
