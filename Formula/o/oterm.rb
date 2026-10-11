@@ -9,11 +9,12 @@ class Oterm < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c60d26456ecc528e2b9a619cb8339e3f9a036354bc3974c2e3b6ed5ef76d1b68"
-    sha256 cellar: :any, arm64_tahoe:       "7bb9b33fe390e0d5f035bc2462e91fbc9c3a086585130eba8ad49efd5d94e7fe"
-    sha256 cellar: :any, arm64_sequoia:     "7a49cc48766e29f3358dfbe1c0fbd8ca956cb300fadf5fc5193d6cf50a838254"
-    sha256 cellar: :any, arm64_linux:       "4412ddece6065ad909e44f0416061e622e11570822ebed723aa27d85c3e8beec"
-    sha256 cellar: :any, x86_64_linux:      "3a705961409381e9eb05baa57faad7b95f8e87d60c298b7770ea2c4d93a2099b"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "e9cf612f7d28f870271ce7871828e96bad155d8ed5371cf8d6b423df705c110f"
+    sha256 cellar: :any, arm64_tahoe:       "935815e5f858183570de8d2d34c55472cc8b300829cfa9dee2c06f2fdf3eaaec"
+    sha256 cellar: :any, arm64_sequoia:     "8dfb7cc6bb5ac5433e2b57605a9398ca920f0f3174f628dd130f97f432e103e0"
+    sha256 cellar: :any, arm64_linux:       "c029f651935ad01084b8c9cd3f5a4c1cfe7d31dced56797ab789b548b80be297"
+    sha256 cellar: :any, x86_64_linux:      "f8a3163239f3d36c76f29c92b9d15dde417a2b54a25d6604db49bfc55ae5f374"
   end
 
   depends_on "pkgconf" => :build
@@ -653,19 +654,19 @@ class Oterm < Formula
   end
 
   def install
-    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
+    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG for primp
     ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
-    ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
+    ENV.append_to_rustflags "--codegen link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
     without = ["hf-xet"]
     without += %w[jeepney secretstorage] unless OS.linux?
     venv = virtualenv_install_with_resources(without:)
 
     resource("hf-xet").stage do
-      # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
-      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
+      # Use native-tls rather than needing to build another rustls + aws-lc
+      inreplace %w[xet_client/Cargo.toml xet_data/Cargo.toml xet_pkg/Cargo.toml],
+                'default = ["rustls-tls"]', 'default = ["native-tls"]'
       venv.pip_install Pathname.pwd
     end
 
