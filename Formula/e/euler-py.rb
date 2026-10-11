@@ -24,7 +24,7 @@ class EulerPy < Formula
     sha256 cellar: :any_skip_relocation, all: "1f0b353fae5f2356901a0d33ae8c994f35194bc1a23acd06397b6458e892231c"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   # Manually updated
   resource "click" do
