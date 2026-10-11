@@ -10,11 +10,12 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c2cbcdee25c8ab754a68b3d450e2209bf65e824d3e84959a53de3190fc5e5ba0"
-    sha256 cellar: :any, arm64_tahoe:       "cd46b189534e133fe3d90d8ed7811124da70e67f067e17e5e5a111cf84711763"
-    sha256 cellar: :any, arm64_sequoia:     "da06f05849d13c9f98394b18e00679f6694abc14dbcc6d1d30eb426f83b6fd7e"
-    sha256 cellar: :any, arm64_linux:       "4282658cb9283f119f5465383601cebe36dff289a467618e8b8b8b19a3e383b4"
-    sha256 cellar: :any, x86_64_linux:      "60fb021316a587fab2c3830a0eafda27232515a3082d4551bc3e34a53a150f1f"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "143b9742d1bc3c1e6dc0bba5bb318551f6975483c823e18e75fc7efa0904fe1d"
+    sha256 cellar: :any, arm64_tahoe:       "ffa3719113641026d3c09d5fc9b318f30166e593afdb65d5a95fc06c9fbb9f86"
+    sha256 cellar: :any, arm64_sequoia:     "1c6e52c9fa3ac7c96e3159b92c5c1369a311d0c1539145331c346a9e8c1ff4dc"
+    sha256 cellar: :any, arm64_linux:       "0a38f9fc48b0e8e7914d0b0104375c7ab326143b50f0cab212bc8b9f73595775"
+    sha256 cellar: :any, x86_64_linux:      "ce125cde270a6c9930c43bd50ad45db7553e7f028090528275ca8c846cbd0652"
   end
 
   depends_on "certifi" => :no_linkage
