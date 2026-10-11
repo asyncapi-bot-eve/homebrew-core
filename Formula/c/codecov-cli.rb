@@ -6,7 +6,8 @@ class CodecovCli < Formula
   url "https://files.pythonhosted.org/packages/b8/c3/d097b669f1d794d956e4afc52cf5d2ce3d1d0bc42cb3505092fbb5b4d319/codecov_cli-11.3.1.tar.gz"
   sha256 "316bd39d0e90491b9bd609bc4ad0c2c037ee9c724faf4b2b72c1f70755d4e616"
   license "Apache-2.0"
-  revision 1
+  revision 2
+  head "https://github.com/codecov/codecov-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "76aad766dfdf79f1469dcae736650a0a838de51428307f335b9cb2375316682a"
@@ -19,7 +20,7 @@ class CodecovCli < Formula
   depends_on "rust" => :build
   depends_on "certifi" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 
@@ -68,7 +69,12 @@ class CodecovCli < Formula
     sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
   end
 
+  allow_network_access! :build
+
   def install
+    # TODO: Remove when test-results-parser supports Python 3.15: https://github.com/codecov/test-results-parser/issues/97
+    ENV["PYO3_USE_ABI3_FORWARD_COMPATIBILITY"] = "1"
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"codecovcli", shell_parameter_format: :click)
@@ -76,6 +82,15 @@ class CodecovCli < Formula
 
   test do
     assert_equal "codecovcli, version #{version}\n", shell_output("#{bin}/codecovcli --version")
+
+    system libexec/"bin/python", "-c", <<~PYTHON
+      from test_results_parser import Outcome, parse_junit_xml
+
+      result = parse_junit_xml(b'<testsuite name="example"><testcase name="success" time="0.1"/></testsuite>')
+      assert len(result.testruns) == 1
+      assert result.testruns[0].name == "success"
+      assert result.testruns[0].outcome == Outcome.Pass
+    PYTHON
 
     (testpath/"coverage.json").write <<~JSON
       {
