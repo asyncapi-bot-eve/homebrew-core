@@ -14,7 +14,7 @@ class GitReview < Formula
   end
 
   depends_on "certifi"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "gerrit-tools", because: "both install `git-review` binaries"
 
