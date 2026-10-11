@@ -7,11 +7,11 @@ class DerAscii < Formula
   head "https://github.com/google/der-ascii.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c26d32eff2a2323d6c7a5b05fef68e6b1801885b94aa085f87fedaad8237ffeb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c26d32eff2a2323d6c7a5b05fef68e6b1801885b94aa085f87fedaad8237ffeb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c26d32eff2a2323d6c7a5b05fef68e6b1801885b94aa085f87fedaad8237ffeb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9a8681211a16239baec5b8f3b968041389dc2dcc1558d1c7b3fbe95b076f1d95"
-    sha256 cellar: :any,                 x86_64_linux:      "197939e5f08db8c574335146e29d969a0de4ac4fd6d6c7f724d377ccf32cd28a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cee7ca36c243deb8b819de10afba2487850508083edfddd0c95b52a9a44d8934"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cee7ca36c243deb8b819de10afba2487850508083edfddd0c95b52a9a44d8934"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cee7ca36c243deb8b819de10afba2487850508083edfddd0c95b52a9a44d8934"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4707560a4961c18efd63cf9167f18be7cc96fa96252703a510d40979cab27dac"
+    sha256 cellar: :any,                 x86_64_linux:      "5a6169c18276048b713584fb4e9a55f13bb7ca6e02d7063319734b715a1f8461"
   end
 
   depends_on "go" => :build
