@@ -1,8 +1,8 @@
 class Zuban < Formula
   desc "Python language server and type checker, written in Rust"
   homepage "https://zubanls.com/"
-  url "https://github.com/zubanls/zuban/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "ef18bed5412da00667862751e16b4cf66039ae39e3618ef891f58d089fabe5c0"
+  url "https://github.com/zubanls/zuban/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "9e6c2abb4a7599bd1d8169dab6e2da19f1916afc8ff99374ee6f5a5f5e801176"
   license "AGPL-3.0-only"
   head "https://github.com/zubanls/zuban.git", branch: "master"
 
