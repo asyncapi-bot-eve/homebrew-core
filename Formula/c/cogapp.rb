@@ -12,7 +12,7 @@ class Cogapp < Formula
     sha256 cellar: :any_skip_relocation, all: "a7137db8332857614eecfd870f6e44bbd9d5504fff07c508c684043b98ff4760"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "cocogitto", "cog", because: "both install `cog` binaries"
 
