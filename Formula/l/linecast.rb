@@ -11,7 +11,7 @@ class Linecast < Formula
     sha256 cellar: :any_skip_relocation, all: "9c64fd2dd132ea5fe33b1a39a4a2207f8afe74017e6d2719dc38675e817d17b7"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     virtualenv_install_with_resources
