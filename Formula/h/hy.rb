@@ -11,7 +11,7 @@ class Hy < Formula
     sha256 cellar: :any_skip_relocation, all: "55a855467c2c228192b035fda862aff04c62e857b383f8e170540d7688f81665"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "funcparserlib" do
     url "https://files.pythonhosted.org/packages/93/44/a21dfd9c45ad6909257e5186378a4fedaf41406824ce1ec06bc2a6c168e7/funcparserlib-1.0.1.tar.gz"
