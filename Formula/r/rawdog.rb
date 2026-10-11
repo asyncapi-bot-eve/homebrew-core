@@ -7,7 +7,7 @@ class Rawdog < Formula
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
-  revision 26
+  revision 27
   head "https://github.com/granawkins/rawdog.git", branch: "main"
 
   bottle do
@@ -27,7 +27,7 @@ class Rawdog < Formula
   depends_on "rpds-py" => :no_linkage
 
   on_linux do
-    depends_on "openssl@3" # for hf-xet
+    depends_on "openssl@4" # for hf-xet
   end
 
   pypi_packages exclude_packages: ["certifi", "pydantic", "rpds-py"]
