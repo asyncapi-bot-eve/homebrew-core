@@ -7,13 +7,11 @@ class Ktea < Formula
   head "https://github.com/jonas-grgt/ktea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54d8436d270f52277924032d8002c6cec75abfea04b57129af40f012d1a4daac"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ba120d2a3ebe8797d35a7e776358c06a4f741c8d1b14ae624ece0554c85fc19c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba120d2a3ebe8797d35a7e776358c06a4f741c8d1b14ae624ece0554c85fc19c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ba120d2a3ebe8797d35a7e776358c06a4f741c8d1b14ae624ece0554c85fc19c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "8537976c5e1629a28caf0413542ec0fd35ff4f0a20b2b9f5d5c1d5594ccf9c7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a55355631ba40c61b309efeede7154d0b07137df1c817d6f6112fb012f76d0d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "21177f8146ad242c92aaa340e4558369987fbb62395c423becab0e22d85c5292"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "09aeed48dd2e16dc5810b40fa1c4e139dbb60665e0705fe0fe17b2aacfab25e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "09aeed48dd2e16dc5810b40fa1c4e139dbb60665e0705fe0fe17b2aacfab25e4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "09aeed48dd2e16dc5810b40fa1c4e139dbb60665e0705fe0fe17b2aacfab25e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "961f31998caae9b59b26c4da397833f853f7aa1a6ec0da300319cccd9ba91bcf"
+    sha256 cellar: :any,                 x86_64_linux:      "e84b0cf20ab9452f7fd13f4f26edbfa0fd7aa66449f26c47f269beeaf3ff11b7"
   end
 
   depends_on "go" => :build
