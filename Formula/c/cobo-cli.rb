@@ -6,15 +6,15 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/a4/78/6ce4772eac6acfdf58c1b2f51c4a074e7abf8ab44bb3c6e37ff998ef888a/cobo_cli-0.1.10.tar.gz"
   sha256 "fc631b4b51346941fcde398080e23cace14afb922ed9754777d2e0bb3e9763d6"
   license "MIT"
+  revision 1
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "fc290a813c8660b5a63d6e5dcd3178b6c6fb4b3131819b7c8753992be444b5e9"
-    sha256 cellar: :any, arm64_tahoe:       "bc0883da37443e97df0304d3c496d8fabb1617ac1378fe81b54de37bdb2281ae"
-    sha256 cellar: :any, arm64_sequoia:     "470ab6a7eeebfd2e500aefb54db6ff73b8d6e6d9f763eae91629ab334e0f774d"
-    sha256 cellar: :any, arm64_linux:       "7afc4cc79b0091e779585a42d218fb20a95c60a306e4afd2cecc18bdca9614ba"
-    sha256 cellar: :any, x86_64_linux:      "e974b3478c94099b20cba06dc66fc7bb2ea2f7e0cb7303ebe300bb31fce92780"
+    sha256 cellar: :any, arm64_golden_gate: "5731c491caeb8bc3bce4fc25579f5887e93b0b5e188e268e6b2d9f9d0d1024ff"
+    sha256 cellar: :any, arm64_tahoe:       "24274d23f632bdcb879213f58ba08bf19b6c90485f742f999e69289e57f82089"
+    sha256 cellar: :any, arm64_sequoia:     "40f5463507350c8c89983e93e7eff1441f4f56297214f6d17c1ac8ff68af67f3"
+    sha256 cellar: :any, arm64_linux:       "f1c8ee0c81527befa1376001401dd1ffb72e3c272376d4dc3d83783f3c5b8eae"
+    sha256 cellar: :any, x86_64_linux:      "20226587aecb8291ad6b670df826b07f13a3841596b887e53944b3a4bcdd5162"
   end
 
   depends_on "rust" => :build # for dnspython > uv_build > maturin
@@ -138,6 +138,13 @@ class CoboCli < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+
+    # Backport fix for OpenSSL 4 until cobo-cli updates urllib3 pin to allow 2.8.0
+    patch do
+      url "https://github.com/urllib3/urllib3/commit/627636551e0e0159996b0f28dd21a60372cc5b10.patch?full_index=1"
+      sha256 "6e5f13b1b60313fbd8a70d0aab58f7c6a413f641ad6fa2e5a3539e3de68bbe27"
+      type :backport
+    end
   end
 
   resource "websocket-client" do
@@ -146,6 +153,10 @@ class CoboCli < Formula
   end
 
   def install
+    urllib3 = resource("urllib3")
+    odie "Remove urllib3 check as version is now >= 2.8.0!" if urllib3.version >= "2.8.0"
+    odie "Restore urllib3 patch!" if urllib3.patches.empty?
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"cobo", shell_parameter_format: :click)
