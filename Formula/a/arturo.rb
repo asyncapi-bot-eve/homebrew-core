@@ -4,6 +4,7 @@ class Arturo < Formula
   url "https://github.com/arturo-lang/arturo/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "408646496895753608ad9dc6ddfbfa25921c03c4c7356f2832a9a63f4a7dc351"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 1
@@ -19,7 +20,7 @@ class Arturo < Formula
   depends_on "nim" => :build
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   # accessed via dlsym
   depends_on "pcre2" => :no_linkage
@@ -46,7 +47,7 @@ class Arturo < Formula
     # FIXME: Unbundle OpenSSL. Should find a way to do this upstream
     inreplace "src/library/Net.nim",
               /\{\.passL: "[^"]*(-lcrypto|libcrypto\.a)[^"]*"\.\}/,
-              "{.passL: \"-Wl,-rpath,#{formula_opt_lib("openssl@3")} -lssl -lcrypto\".}"
+              "{.passL: \"-Wl,-rpath,#{formula_opt_lib("openssl@4")} -lssl -lcrypto\".}"
 
     # Workaround to use pcre2 after patching `nimble`
     inreplace "src/vm/values/custom/vregex.nim",
