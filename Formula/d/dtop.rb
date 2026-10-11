@@ -1,10 +1,10 @@
 class Dtop < Formula
   desc "Terminal dashboard for Docker monitoring across multiple hosts"
   homepage "https://dtop.dev/"
-  url "https://github.com/amir20/dtop/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "17a955a1110baffb4dcd26ac07bc46707bdd8721414414fd91e57ba19de5ec87"
+  url "https://github.com/amir20/dtop/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "04089af1dfdc3c37b961887caca9108a2ed7c70805121fdebfa6227b0f759ae0"
   license "MIT"
-  head "https://github.com/amir20/dtop.git", branch: "master"
+  head "https://github.com/amir20/dtop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "28218eba18a2964cf49567fb49d22127d8dc9420368472d9a5e039fa6ca0dc36"
@@ -21,6 +21,8 @@ class Dtop < Formula
   end
 
   test do
+    ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
+
     assert_match version.to_s, shell_output("#{bin}/dtop --version")
 
     output = shell_output("#{bin}/dtop 2>&1", 1)
