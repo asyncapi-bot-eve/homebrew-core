@@ -9,11 +9,11 @@ class Codelimit < Formula
   revision 11
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9b1d9fd19f657600bbfecec2d8524c5dd0c2cffb70c73f455782d85bf7c93a2c"
-    sha256 cellar: :any, arm64_tahoe:       "be7444fee1c0ed3b98078f837b36ea2c99371026b17205ef909040750e3b1775"
-    sha256 cellar: :any, arm64_sequoia:     "1dbb03cb8b65b5c73ea975004ff99baf5c41211ab3d615142b40f786d249db14"
-    sha256 cellar: :any, arm64_linux:       "77c1453b65c2b4ea5cc31906be6132db58a8efac9c6ff5fd9937ac08fb327d89"
-    sha256 cellar: :any, x86_64_linux:      "7a945e467135b956a56c801ff0b6ccb015f9cc67e73c81b2fa930f9d42b3bb01"
+    sha256 cellar: :any, arm64_golden_gate: "aec9b310bffbc2de7c4c4326f49d4c46b045b913d724dabf7c7d529d56f9b8cd"
+    sha256 cellar: :any, arm64_tahoe:       "c2a6cc5417267f13751e9bcb753987b05ccc3ec686d7466496a2170b472e6f67"
+    sha256 cellar: :any, arm64_sequoia:     "c7a3aaeaedda13266cbae92f38c276011380a75487eec32c0b432e0bfa535df5"
+    sha256 cellar: :any, arm64_linux:       "1282f38c5df6ce0e278afcbb75258d37fad288fbdbb895190ac148a0bfa05c1d"
+    sha256 cellar: :any, x86_64_linux:      "21152f0e64505aff1cbb087275b8f4c738bd90a2fffd8a9146cb4dd87436dc2f"
   end
 
   depends_on "certifi" => :no_linkage
