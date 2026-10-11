@@ -11,7 +11,7 @@ class Faker < Formula
     sha256 cellar: :any_skip_relocation, all: "26b1b858cfb8aacf211ac3faf970200b28f73983bacc5114ac0413ab77781d94"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     virtualenv_install_with_resources
