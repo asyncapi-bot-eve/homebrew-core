@@ -2,6 +2,7 @@ class Perbase < Formula
   desc "Fast and correct perbase BAM/CRAM analysis"
   homepage "https://github.com/sstadick/perbase"
   license "MIT"
+  revision 1
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   stable do
@@ -45,14 +46,14 @@ class Perbase < Formula
   depends_on "bamtools" => :test
 
   uses_from_macos "bzip2"
-  uses_from_macos "llvm" # for `libclang`
 
   on_linux do
-    depends_on "openssl@3" # need to build `openssl-sys`
+    # FIXME: bindgen 0.69 (via rust-htslib 0.51) generates opaque structs with libclang 22+
+    depends_on "llvm@21" => :build # for `libclang`
   end
 
   def install
-    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm@21") if OS.linux?
 
     if build.stable?
       # TODO: remove this check when bump-formula-pr can automatically update resources
