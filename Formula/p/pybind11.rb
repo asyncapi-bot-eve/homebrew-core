@@ -4,6 +4,7 @@ class Pybind11 < Formula
   url "https://github.com/pybind/pybind11/archive/refs/tags/v3.1.0.tar.gz"
   sha256 "ef712655692a2e9bf7bb7874c022564a45f91d847ddee987e720cd9e28849665"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -16,8 +17,8 @@ class Pybind11 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.13" => [:build, :test]
   depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula)
