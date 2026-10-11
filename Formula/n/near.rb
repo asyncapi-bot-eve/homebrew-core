@@ -4,6 +4,7 @@ class Near < Formula
   url "https://github.com/near/near-cli-rs/archive/refs/tags/v0.30.1.tar.gz"
   sha256 "57e1249856b70b3cf6562becc618602d3c1a1f3aca98e7d909f33dfdb85e5439"
   license any_of: ["MIT", "Apache-2.0"]
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a125af9c0dce89e54ac234428db5244faf8f600cab30bdda9c3761ab2d96de9b"
@@ -17,7 +18,7 @@ class Near < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   on_linux do
     depends_on "systemd"
