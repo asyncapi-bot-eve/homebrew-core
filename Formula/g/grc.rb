@@ -14,7 +14,7 @@ class Grc < Formula
     sha256 cellar: :any_skip_relocation, all: "7a9655993b72c5fa50ecd3e530cdb69ab9da8c0fc4f9352786b10c9529d26cc8"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     # fix non-standard prefix installs
