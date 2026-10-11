@@ -3,17 +3,17 @@ class PythonYq < Formula
 
   desc "Command-line YAML and XML processor that wraps jq"
   homepage "https://kislyuk.github.io/yq/"
-  url "https://files.pythonhosted.org/packages/db/63/6ddfc78e231d2c11538a08debdf96cbe0f372013a849fe391521a4db975e/yq-4.4.2.tar.gz"
-  sha256 "d9e2d2cc643f5035dddfdf3d1b1efd58edc19f1d4f3c3ad0bb20645d1900e1f8"
+  url "https://files.pythonhosted.org/packages/2b/8e/76ea0baa512cb340a20d84b52bde962a26407a1e8e105d766dbe66f0f8eb/yq-4.4.3.tar.gz"
+  sha256 "f238e80014ad51bff59382205aeeaf4de4de1e97003978248584c8b349337cd0"
   license "Apache-2.0"
   head "https://github.com/kislyuk/yq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b6b17ee84bbdea4e3c5e8ee377043b7870c7be0a445d9b7f76504c892313fcb8"
-    sha256 cellar: :any, arm64_tahoe:       "c99414b2f6ce820096c8f0193e149cec7b88a3a96603e2a8c42c9bdbdcd925f5"
-    sha256 cellar: :any, arm64_sequoia:     "dc9305728d08cae5eb46823deadf3e64113458419e42425bd9dc3eac55c6fe10"
-    sha256 cellar: :any, arm64_linux:       "6aba8d9f2166783ac4c7bc48af43d40c98851bdf1f9ffd8e45520aef9e2bafb1"
-    sha256 cellar: :any, x86_64_linux:      "0015193f7fe789a5b6f0b287408de25607fd0d5c6abc6cf59394ed973cb0b21c"
+    sha256 cellar: :any, arm64_golden_gate: "52dd23e541de0d1a3faa3ef78a3eeebaf43330499bd8f2647e4c789f9604d3ab"
+    sha256 cellar: :any, arm64_tahoe:       "61f494618dea903426a04a9c3ba33ee482e5aa23a6c0f3b0c0cc1df3c5527531"
+    sha256 cellar: :any, arm64_sequoia:     "c22c8b8c28ca44237c34abb21b94a81ffc00983be74f76eb289ba29370081aeb"
+    sha256 cellar: :any, arm64_linux:       "3f2a4935543d2b579b94456497816d86a27237dca8d94263ce9c491bfa3a1a07"
+    sha256 cellar: :any, x86_64_linux:      "3edadd8c0c51fb8c9d2f57ef3548fde79fd57549a03344985c5ea221e3452e59"
   end
 
   depends_on "libyaml"
