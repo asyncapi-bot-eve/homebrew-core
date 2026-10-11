@@ -18,7 +18,7 @@ class Mitie < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "906519532491d62f21e16e31ef3fccb49672ca033bf811cf289f93bcb6468eeb"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_sequoia do
     depends_on xcode: ["16.4", :build] # https://github.com/mit-nlp/MITIE/issues/225
