@@ -9,7 +9,7 @@ class Ly < Formula
     sha256 cellar: :any_skip_relocation, all: "db74913f3293f2a0cde5225ab3721c7ce2682f7eaa896e843426717fc525b730"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
