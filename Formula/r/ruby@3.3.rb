@@ -4,6 +4,7 @@ class RubyAT33 < Formula
   url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.12.tar.gz"
   sha256 "b06d63beae271933033e27f0a389bc582a009e7845357d44365c39de525a051b"
   license "Ruby"
+  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -26,7 +27,7 @@ class RubyAT33 < Formula
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   uses_from_macos "gperf"
   uses_from_macos "libffi"
@@ -66,7 +67,7 @@ class RubyAT33 < Formula
     #       https://github.com/Homebrew/brew/pull/12508
     inreplace "tool/mkconfig.rb", /^(\s+val = )'"\$\(SDKROOT\)"'\+/, "\\1"
 
-    paths = %w[libyaml openssl@3].map { |f| formula_opt_prefix(f) }
+    paths = %w[libyaml openssl@4].map { |f| formula_opt_prefix(f) }
     args = %W[
       --prefix=#{prefix}
       --enable-shared
