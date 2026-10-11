@@ -1,8 +1,8 @@
 class Skani < Formula
   desc "Fast, robust ANI and aligned fraction for (metagenomic) genomes and contigs"
   homepage "https://github.com/bluenote-1577/skani"
-  url "https://github.com/bluenote-1577/skani/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "5cae2fc3b8c57881fd9d3494c372eb8c8703eb69900513bfaef01f8892c55ae0"
+  url "https://github.com/bluenote-1577/skani/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "c8fe23ffae0119aa79cc801ac08dfc33862c94006690074daff274d937f1f786"
   license "MIT"
   head "https://github.com/bluenote-1577/skani.git", branch: "main"
 
