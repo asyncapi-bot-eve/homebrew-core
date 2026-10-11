@@ -10,8 +10,8 @@ class Cxxtest < Formula
   head "https://github.com/CxxTest/cxxtest.git", branch: "master"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, all: "aa6fedcd740d5f396b372bfae35f71164499faf2b62c1737befbcada3ea4d7f8"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, all: "71f0403e65f3e5a01559dc1a8154e77ac6e63c48ad999a96d5babb5a3913b8cc"
   end
 
   depends_on "python@3.15"
