@@ -6,6 +6,7 @@ class CoboCli < Formula
   url "https://files.pythonhosted.org/packages/a4/78/6ce4772eac6acfdf58c1b2f51c4a074e7abf8ab44bb3c6e37ff998ef888a/cobo_cli-0.1.10.tar.gz"
   sha256 "fc631b4b51346941fcde398080e23cace14afb922ed9754777d2e0bb3e9763d6"
   license "MIT"
+  revision 1
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
@@ -138,6 +139,13 @@ class CoboCli < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
+
+    # Backport fix for OpenSSL 4 until cobo-cli updates urllib3 pin to allow 2.8.0
+    patch do
+      url "https://github.com/urllib3/urllib3/commit/627636551e0e0159996b0f28dd21a60372cc5b10.patch?full_index=1"
+      sha256 "6e5f13b1b60313fbd8a70d0aab58f7c6a413f641ad6fa2e5a3539e3de68bbe27"
+      type :backport
+    end
   end
 
   resource "websocket-client" do
@@ -146,6 +154,10 @@ class CoboCli < Formula
   end
 
   def install
+    urllib3 = resource("urllib3")
+    odie "Remove urllib3 check as version is now >= 2.8.0!" if urllib3.version >= "2.8.0"
+    odie "Restore urllib3 patch!" if urllib3.patches.empty?
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"cobo", shell_parameter_format: :click)
