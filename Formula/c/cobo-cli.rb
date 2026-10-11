@@ -10,12 +10,11 @@ class CoboCli < Formula
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "fc290a813c8660b5a63d6e5dcd3178b6c6fb4b3131819b7c8753992be444b5e9"
-    sha256 cellar: :any, arm64_tahoe:       "bc0883da37443e97df0304d3c496d8fabb1617ac1378fe81b54de37bdb2281ae"
-    sha256 cellar: :any, arm64_sequoia:     "470ab6a7eeebfd2e500aefb54db6ff73b8d6e6d9f763eae91629ab334e0f774d"
-    sha256 cellar: :any, arm64_linux:       "7afc4cc79b0091e779585a42d218fb20a95c60a306e4afd2cecc18bdca9614ba"
-    sha256 cellar: :any, x86_64_linux:      "e974b3478c94099b20cba06dc66fc7bb2ea2f7e0cb7303ebe300bb31fce92780"
+    sha256 cellar: :any, arm64_golden_gate: "5731c491caeb8bc3bce4fc25579f5887e93b0b5e188e268e6b2d9f9d0d1024ff"
+    sha256 cellar: :any, arm64_tahoe:       "24274d23f632bdcb879213f58ba08bf19b6c90485f742f999e69289e57f82089"
+    sha256 cellar: :any, arm64_sequoia:     "40f5463507350c8c89983e93e7eff1441f4f56297214f6d17c1ac8ff68af67f3"
+    sha256 cellar: :any, arm64_linux:       "f1c8ee0c81527befa1376001401dd1ffb72e3c272376d4dc3d83783f3c5b8eae"
+    sha256 cellar: :any, x86_64_linux:      "20226587aecb8291ad6b670df826b07f13a3841596b887e53944b3a4bcdd5162"
   end
 
   depends_on "rust" => :build # for dnspython > uv_build > maturin
