@@ -9,21 +9,21 @@ class CoboCli < Formula
   head "https://github.com/CoboGlobal/cobo-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0bdcb8b490f409d5a930cf4b5e7b774ec980f88da1fb4752160393cb78a23cab"
-    sha256 cellar: :any, arm64_tahoe:       "88cb56e7953b2cbf533015992d01c00ef06df4cba17f6e03a6569aac1ce48ad4"
-    sha256 cellar: :any, arm64_sequoia:     "543eb52ebddec3f7cd090d89cf3f8c4c85ca351c38a9e9c2636448b6b487d267"
-    sha256 cellar: :any, arm64_sonoma:      "be0d6b7580cf6c3c8623e153b4ba0080e3f15ff209ea8e89c23e089628d7db3d"
-    sha256 cellar: :any, sonoma:            "68196ab45a13ae2db473edd79ec330b2c41d50f1901878ec6622d39235a86bd7"
-    sha256 cellar: :any, arm64_linux:       "3b98a46864cddcc1416bb63bdd8a8ef0b0579a48c16612fe54efbc7cda41dd48"
-    sha256 cellar: :any, x86_64_linux:      "37b951f57447afb1aaf9421a5c2a3f7d10438eafb422b69f6d3004fa97897647"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "fc290a813c8660b5a63d6e5dcd3178b6c6fb4b3131819b7c8753992be444b5e9"
+    sha256 cellar: :any, arm64_tahoe:       "bc0883da37443e97df0304d3c496d8fabb1617ac1378fe81b54de37bdb2281ae"
+    sha256 cellar: :any, arm64_sequoia:     "470ab6a7eeebfd2e500aefb54db6ff73b8d6e6d9f763eae91629ab334e0f774d"
+    sha256 cellar: :any, arm64_linux:       "7afc4cc79b0091e779585a42d218fb20a95c60a306e4afd2cecc18bdca9614ba"
+    sha256 cellar: :any, x86_64_linux:      "e974b3478c94099b20cba06dc66fc7bb2ea2f7e0cb7303ebe300bb31fce92780"
   end
 
+  depends_on "rust" => :build # for dnspython > uv_build > maturin
   depends_on "certifi" => :no_linkage
   depends_on "cffi" => :no_linkage
   depends_on "libsodium"
   depends_on "libyaml"
   depends_on "pydantic" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   uses_from_macos "libffi"
 
@@ -31,13 +31,13 @@ class CoboCli < Formula
                 extra_packages:   "typing-inspection"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
-    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
+    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
+    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
   end
 
   resource "dataclasses-json" do
@@ -46,8 +46,8 @@ class CoboCli < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/8c/8b/57666417c0f90f08bcafa776861060426765fdb422eb10212086fb811d26/dnspython-2.8.0.tar.gz"
-    sha256 "181d3c6996452cb1189c4046c61599b84a5a86e099562ffde77d26984ff26d0f"
+    url "https://files.pythonhosted.org/packages/ef/4a/50822184bd67cc6493f0fb6a880749158fcd31ab3fa07409acfd91f9fc85/dnspython-2.9.0.tar.gz"
+    sha256 "b44dc6b18f07a8b1c56676a19fbfdb5209415b046a9cece286baafa87ff3f7f1"
   end
 
   resource "email-validator" do
@@ -66,8 +66,8 @@ class CoboCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "marshmallow" do
