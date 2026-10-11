@@ -4,6 +4,7 @@ class CargoBundle < Formula
   url "https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.12.0.tar.gz"
   sha256 "686592eca1e4d0bac0a29b28825214809d02b6552f2c9fd5e954920632b6016b"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/burtonageo/cargo-bundle.git", branch: "master"
 
   bottle do
@@ -20,7 +21,7 @@ class CargoBundle < Formula
 
   on_linux do
     depends_on "squashfs" => :test
-    depends_on "openssl@3"
+    depends_on "openssl@4"
   end
 
   allow_network_access! :test
