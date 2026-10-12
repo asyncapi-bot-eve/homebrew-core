@@ -8,11 +8,12 @@ class RobotFrameworkRobocop < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b2412a399ab2e1a79c083d83ae40a83f9c5b2c6fee39bee6b1beb82db96e32a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5d746b9d2cf820ad07b8816a318e96eb68071d23b70d7fe70efbc121cc4c1ce7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ba782c253ec44bc7abae7a944eb96889a5c5bf80ca7a8d6e856cb9d2c3c666b"
-    sha256 cellar: :any,                 arm64_linux:       "9a32d972ad37653d440fc43dd3b34a7f4305a5b05a3f45d3e805b45a0cf22005"
-    sha256 cellar: :any,                 x86_64_linux:      "4b69ce7e8bd16218e655f9a9f04cf121f31589024dd1cfbaed06352ef220aa9a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ff67621feb7ca5feabc9d7c3255ae46b1562b5356977ccec410f51806dd6757c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3f9297044201a676c17dc4a76f71c71d97d7ac526a5971bcfc91acbb3babb89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c65fcdcaad16481eea448ee9f1e0524277b1222678f6506a120d0ec41dd40b68"
+    sha256 cellar: :any,                 arm64_linux:       "4a9cc34def04dd0e0d80baf70dea2ab978e22940cadf0ffaf67773b66b573e8e"
+    sha256 cellar: :any,                 x86_64_linux:      "d326e4abe8789c7fb4150e37e483ccf1d37a66d8e505c89bc21a802f3ec7d276"
   end
 
   depends_on "python@3.15"
