@@ -11,7 +11,7 @@ class Pygitup < Formula
     sha256 cellar: :any_skip_relocation, all: "b2bf58d47332ea609cdfbb4462503fc3c6d8f18b90086c21dbdddc3728e52777"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
