@@ -18,7 +18,7 @@ class Remarshal < Formula
     sha256 cellar: :any,                 x86_64_linux:      "e2ec990791f0aecc0b6f0774b64fc91f5d1f669fa10425feba271ccb441ef9c6"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "msgpack-tools", because: "both install 'json2msgpack' binary"
   conflicts_with "toml2json", because: "both install `toml2json` binaries"
@@ -50,8 +50,8 @@ class Remarshal < Formula
   end
 
   resource "tomli" do
-    url "https://files.pythonhosted.org/packages/22/de/48c59722572767841493b26183a0d1cc411d54fd759c5607c4590b6563a6/tomli-2.4.1.tar.gz"
-    sha256 "7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f"
+    url "https://files.pythonhosted.org/packages/b0/78/9ad63712633ed3ab5cc1a648d863d7e7da371e9425e209555a0fe711b695/tomli-2.5.0.tar.gz"
+    sha256 "264507556cd8b8c8e7c6ee037cdf443a463f03f4c958e57195e3d369711b8ff6"
   end
 
   resource "tomlkit" do
