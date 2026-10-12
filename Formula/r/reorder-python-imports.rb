@@ -12,7 +12,7 @@ class ReorderPythonImports < Formula
     sha256 cellar: :any_skip_relocation, all: "263cf33f6f2044e89ff6409fa78da1dbea5c67c423731a9d95ac629ba6fe03d3"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "classify-imports" do
     url "https://files.pythonhosted.org/packages/b5/ac/1223bc31ef2947227fe8c705efd005e6d06170cff33db3ccaef34ab98b69/classify_imports-4.5.0.tar.gz"
