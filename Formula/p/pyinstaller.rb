@@ -16,7 +16,7 @@ class Pyinstaller < Formula
     sha256 cellar: :any,                 x86_64_linux:      "4c3c51c5ea3151120cd4d653140a7131ed43f207b9f046e9cbe4ce13f92cda62"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -40,8 +40,8 @@ class Pyinstaller < Formula
   end
 
   resource "pyinstaller-hooks-contrib" do
-    url "https://files.pythonhosted.org/packages/26/60/d881fa1ba8c160c18d8e6f782bb16ec4640c08bc08fc50f704c368ad4f9e/pyinstaller_hooks_contrib-2026.7.tar.gz"
-    sha256 "5fbcaacb22c4f4aac869a127dce283f67a4b4cfcc37d496f2446603e6d68aefa"
+    url "https://files.pythonhosted.org/packages/c9/3b/fab1a12a21bf9223af012e5dd002b7d4265683d21d9fabbd0ccb347316e4/pyinstaller_hooks_contrib-2026.8.tar.gz"
+    sha256 "4d825786ad7a9b7dbcc52d612748a34562fe273461bcfd88f4d549c594bbf8f9"
   end
 
   resource "setuptools" do
