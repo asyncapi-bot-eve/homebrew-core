@@ -12,7 +12,7 @@ class Regipy < Formula
     sha256 cellar: :any_skip_relocation, all: "0f603d354b5663547bd47b732a7b80fa9848b37a74b4fb701e4fcf7e2a73e695"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages package_name: "regipy[cli]"
 
