@@ -8,7 +8,8 @@ class Termaid < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a3e5c9c59391b234168e8e50aaeda31bb2342c04c073e61f9c7896940515bbee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "b0c0e746bc7cf02eeba068dbeaccdabbfe7c85e66d97976e9f15c6aff1543a1b"
   end
 
   depends_on "python@3.15"
