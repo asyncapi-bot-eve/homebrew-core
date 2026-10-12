@@ -11,7 +11,7 @@ class Repren < Formula
     sha256 cellar: :any_skip_relocation, all: "721d881e8ed798f85c81b70c5c1fc1152092d0e88ab291254e789d08ab25f2c2"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   def install
     virtualenv_install_with_resources
