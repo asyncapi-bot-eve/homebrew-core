@@ -9,13 +9,12 @@ class Pyperformance < Formula
   head "https://github.com/python/pyperformance.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dd87960cb67d2ea051a8381a831dd7b2385e9b9c82e45588435f600485e52e42"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ad82189e6cddef5507abd1a7fcf54dcf30bc7f873e03a0cccda77b94c9f9e96"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a358e5472d6fcf63f6a5414582adcfd3b02489eb6692f654294e4a519aa4e90c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "b814f1d5695be71165ba3cb1090d1ed902c9df0656c0ed6d363ee58e014f43ce"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ffbd555113d102bd3e47e27440e75759d59588f40ae078b87e8ba22e3532fba6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9b9bfa4a2f083266f4198491a952642e70355801ece53642c95e451a61d85ab0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "23e4b75b6ffa1eed4e4710db8b3101f970f027fd1fdeeb3a5905b35bdf627d29"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "99ce5f81c38fc29c5e8276aad5abeb64438b1e92dbb6e6d2a995aebb922c5a67"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "311bd9c8fa497645bf1b52ea724b05ab51f65226c8633b991158b7f62c493119"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fa03097d651a4d16fbcf1c7fa9f4809753cabf8271bae759e3ae6e92e0761946"
+    sha256 cellar: :any,                 arm64_linux:       "2e3c20a7de2b56e333f51ed18490df04fff5885aa27c91f2fce107755f419040"
+    sha256 cellar: :any,                 x86_64_linux:      "d1d68571ec7a9bf4b5af6675aec8d75c03d78013484713aa332880c8f7ed4a62"
   end
 
   depends_on "python@3.15"
