@@ -9,7 +9,12 @@ class Pyvim < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1d58cebd20b620cf8c5b8c3dba691fba241b4f7783f200e76dc4645f5e9ca90a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "256e18589710ad7ed0448f0bc0eb03670d7aa4cfad723af2538c96ca45db6c25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "599048dc5e4be6430fe595f912c32e2970db218522dcc985dc69de041c52a3b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "617114c69fe69b9fa0ebf68bb5a03424eb7cb9bc446223d8d91f98ea916abd80"
+    sha256 cellar: :any,                 arm64_linux:       "8d9d355b9c701e002f27975eef712c148db7b905ac07f730c29a6ff13931fce6"
+    sha256 cellar: :any,                 x86_64_linux:      "bbe78217bd124726a8d1a099718b2b3352337192ae5fd035285422f8c9f84820"
   end
 
   depends_on "python@3.15"
