@@ -12,7 +12,7 @@ class MuRepo < Formula
     sha256 cellar: :any_skip_relocation, all: "99a341e92b7abdf36d1088357f8d8abc070151734e2c3b45dec1327c1bf81afe"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "mu", because: "both install `mu` binaries"
 
