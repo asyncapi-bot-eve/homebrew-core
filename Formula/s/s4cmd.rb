@@ -10,7 +10,8 @@ class S4cmd < Formula
   head "https://github.com/bloomreach/s4cmd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b8bef2d5ea5b7e614daac89dbfdef484bb294f88fc5af9c38864d81c640cb315"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "ebfbd2f2a2c76dfd89b9864ead841385babe604052b43cb67c4ea307c8a78985"
   end
 
   depends_on "python@3.15"
