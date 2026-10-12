@@ -10,8 +10,8 @@ class Percol < Formula
   head "https://github.com/mooz/percol.git", branch: "master"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, all: "2c3890df22100cdc7677b196d924237649a0d7e3af5d0c26fa52e012cdcd1dac"
+    rebuild 7
+    sha256 cellar: :any_skip_relocation, all: "7e532aea84d749b2e3ad1a5ac163da21037904b9026b90c77caa2aa5df42a408"
   end
 
   depends_on "python@3.15"
