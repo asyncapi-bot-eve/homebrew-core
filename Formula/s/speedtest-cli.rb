@@ -18,7 +18,7 @@ class SpeedtestCli < Formula
   deprecate! date: "2026-01-18", because: :unmaintained
   disable! date: "2027-01-18", because: :unmaintained
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   conflicts_with "speedtest-go", because: "both install `speedtest` binaries"
 
